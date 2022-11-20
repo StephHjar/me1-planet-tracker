@@ -7,11 +7,47 @@ The alternative was to download a checklist created by other players, with a lis
 
 The planet tracker allows players to sign up for an account, and create a personal list of visited planets as they play through the game. The user can check off items they've discovered on each planet (like Asari Writings, Valuable Minerals, or Prothean Data Discs) without knowing they're there ahead of time. There is also a free text "Notes" section for any reminders or notes the user would like to write (for example, a reminder to revisit a planet, or complete a specific side quest).
 
-The site is fully responsive, so users can play the game on desktop or console, and have their phone or table next to them open to the Planet Tracker while they play. 
-
-![Responsive Mockup](#)
+The site is fully responsive, so users can play the game on desktop or console, and have their phone or tablet next to them open to the Planet Tracker while they play. 
 
 ## User Experience
+
+### User Stories
+As I began planning and ideating this project, I broke down the functionality of the project into Epics and User Stories as below:
+
+**Epic: Account Management**
+
+**User Stories**:
+- As a **user** I can **sign up for an account** so that I can **track the planets I have visited**
+- As a **user** I can **log in and out of my account** so that **I can access my 'visited planets' dashboard**
+- As a **user** I can **set a profile photo** so that **I can customize my version of Commander Shepard to match the character in the game**
+- As a **user** I can **request to reset my password via email** so that **I can log back in to my account if I don't remember my login details**
+
+**Epic: Managing the Planet Dashboard**
+
+**User Stories**: 
+- As a **user** I can **add a visited planet to my dashboard** so that **I can keep track of all planets and what I found there**
+- As a **user** I can **edit my visited planets** so that **I can make changes as I make more discoveries, or fix mistakes**
+- As a **user** I can **delete planets** so that **I can remove any planets I added by mistake, or that I may want to revisit**
+- As a **user** I can **view my visited planet list** so that **I can see which planets I have visited and what I found there**
+- As a **user** I can **see the percentage of planets I have visited at a glance** so that **I understand how much progress I have made in the game**
+
+**Epic: Admin Capabilities**
+
+**User Stories**:
+- As a **site admin** I can **track the number of users and the number of planets visited by each user** so that **I can share this information on the home page, and award progress badges to users**
+- As a **site admin** I can **create and edit the list of planets users can choose from** so that **only planets from Mass Effect 1 can be added to users' dashboards**
+
+**Epic: Rewards & Badges**
+
+**User Stories**:
+- As a **user** I can **win a badge when I visit a certain number of planets** so that **I feel a sense of accomplishment and progress as I add planets to my dashboard**
+- As a **user** I can **see previous badges I have won** so that **I can look back at the progress I have made**
+- As a **site admin** I can **award badges to users when they visit a certain number of planets** so that **users will feel accomplished and stay engaged with the site**
+- As a **user** I can **see statistics on the home page that display how many users have visited 25%, 50%, 75%, and 100% of planets** so that **I can feel motivated and compare my own progress to other users'**
+
+These user stories are being tracked using GitHub Projects, and tagged as either Must Have (features which the site requires in order to function), Should Have (features which the site should have in order to be fully functional, but could still run without), and Nice To Have (features which are not necessary for the functionality of the site, but would improve the user experience). See a screenshot below:
+
+![User stories on GitHub Projects](static/readme/UserStoriesGithubProject.jpg)
 
 ### Wireframes
 During the design stage of the project, I created wireframes for desktop, tablet, and mobile versions of the site:
