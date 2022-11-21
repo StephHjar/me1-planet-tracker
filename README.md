@@ -21,6 +21,8 @@ As I began planning and ideating this project, I broke down the functionality of
 - As a **user** I can **log in and out of my account** so that **I can access my 'visited planets' dashboard**
 - As a **user** I can **set a profile photo** so that **I can customize my version of Commander Shepard to match the character in the game**
 - As a **user** I can **request to reset my password via email** so that **I can log back in to my account if I don't remember my login details**
+- As a **user** I can **delete my account** so that **my details are deleted when I have finished playing the game, or don't want to use the tracker anymore**
+- As a **user** I can **update my email address or password** so that **I can keep my account secure and up to date**
 
 **Epic: Managing the Planet Dashboard**
 
@@ -30,6 +32,7 @@ As I began planning and ideating this project, I broke down the functionality of
 - As a **user** I can **delete planets** so that **I can remove any planets I added by mistake, or that I may want to revisit**
 - As a **user** I can **view my visited planet list** so that **I can see which planets I have visited and what I found there**
 - As a **user** I can **see the percentage of planets I have visited at a glance** so that **I understand how much progress I have made in the game**
+- As a **user** I can **upload an image to each planet's card** so that **I can customize my dashboard and record images of every planet I've visited**
 
 **Epic: Admin Capabilities**
 
