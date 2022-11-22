@@ -5,3 +5,7 @@ from django.shortcuts import render
 
 def get_planet_list(request):
     return render(request, 'planets/planets_list.html')
+
+
+def home(request):
+    return render(request, 'planets/base.html')
