@@ -121,6 +121,8 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [Code Institute's README Template](https://github.com/Code-Institute-Solutions/readme-template) was used to structure this README.
 - [Balsamiq](https://balsamiq.com/) to create wireframes during the design phase.  
 - [Lucidchart](https://lucid.app/) to create the Entity Relationship Diagram.
+- The navigation bar was modified from [Bootstrap's documentation](https://getbootstrap.com/docs/5.1/components/navbar/).
+- [This thread](https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right) on StackOverflow helped with aligning the nav bar items to the right of the page.
 
 ### Media
 
