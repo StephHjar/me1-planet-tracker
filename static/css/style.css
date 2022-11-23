@@ -6,6 +6,6 @@ body {
     color: #FFF;
 }
 
-.navigation-menu.expanded {
-    margin-right: 0;
+.navbar-nav {
+    text-align: right;
 }
