@@ -124,6 +124,9 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 ### Media
 
+- [Favicon.io](https://favicon.io/) was used to create the Favicon.
+- The image for the Favicon is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/N7).
+
 
 ## Other General Project Advice
 
