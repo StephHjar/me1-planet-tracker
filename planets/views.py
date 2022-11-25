@@ -14,4 +14,4 @@ def get_planet_list(request):
 
 
 def home(request):
-    return render(request, 'planets/base.html')
+    return render(request, 'planets/index.html')

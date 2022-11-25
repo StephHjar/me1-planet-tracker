@@ -20,5 +20,5 @@ from planets.views import get_planet_list, home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('planet_list/', get_planet_list, name='get_planet_list'),
-    path('', home, name='home')
+    path('', home, name='home'),
 ]
