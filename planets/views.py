@@ -10,8 +10,8 @@ from .models import Planet
 
 
 def get_planet_list(request):
-    return render(request, 'planets/planets_list.html')
+    return render(request, 'planets_list.html')
 
 
 def home(request):
-    return render(request, 'planets/index.html')
+    return render(request, 'index.html')
