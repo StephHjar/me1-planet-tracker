@@ -6,6 +6,13 @@ body {
     color: #FFF;
 }
 
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 6vw;
+}
+
 .navbar-nav {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
     text-align: right;
 }
