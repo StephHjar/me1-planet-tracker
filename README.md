@@ -123,6 +123,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [Lucidchart](https://lucid.app/) to create the Entity Relationship Diagram.
 - The navigation bar was modified from [Bootstrap's documentation](https://getbootstrap.com/docs/5.1/components/navbar/).
 - [This thread](https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right) on StackOverflow helped with aligning the nav bar items to the right of the page.
+- I used [this article](https://mdbootstrap.com/how-to/bootstrap/text-responsive/#:~:text=You%20can%20make%20text%20responsive,%3D%201%25%20of%20viewport%20width.) on MDBootstrap to make the h1 text responsive.
 
 ### Media
 
