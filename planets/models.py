@@ -8,7 +8,8 @@ from cloudinary.models import CloudinaryField
 
 class Planet(models.Model):
     name = models.CharField(max_length=200, unique=True),
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="planets"),
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="planets"),
     fully_explored = models.BooleanField(default=False),
     turian_insignia = models.BooleanField(default=False),
     asari_writing = models.BooleanField(default=False),
