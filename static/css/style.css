@@ -27,7 +27,7 @@ p {
 
 .navbar-nav {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-align: right;
 }
 
@@ -44,6 +44,18 @@ p {
 .planet-list {
     margin-left: 0;
     padding-top: 9%;
+}
+
+
+.btn {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.75rem;
+    margin-bottom: 5vh;
+}
+
+.btn:hover {
+    border-color: #fff;
+    border-width: 1px;
 }
 
 .card-title {
