@@ -2,21 +2,21 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-
-# Create your models here.
+file = open('planets/planets.txt', 'r')
+PLANET_CHOICES = [[x.rstrip('\n'), x.rstrip('\n')] for x in file]
 
 
 class Planet(models.Model):
-    name = models.CharField(max_length=200, unique=True),
+    name = models.CharField(max_length=200, choices=PLANET_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE,
-                             related_name="planets"),
-    fully_explored = models.BooleanField(default=False),
-    turian_insignia = models.BooleanField(default=False),
-    asari_writing = models.BooleanField(default=False),
-    prothean_disc = models.BooleanField(default=False),
-    mineral = models.BooleanField(default=False),
-    medallion = models.BooleanField(default=False),
-    notes = models.TextField(blank=True),
+                             related_name='planets')
+    fully_explored = models.BooleanField(default=False)
+    turian_insignia = models.BooleanField(default=False)
+    asari_writing = models.BooleanField(default=False)
+    prothean_disc = models.BooleanField(default=False)
+    mineral = models.BooleanField(default=False)
+    medallion = models.BooleanField(default=False)
+    notes = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
