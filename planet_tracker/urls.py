@@ -18,7 +18,7 @@ from django.urls import path
 from planets.views import IndexView, PlanetList
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', IndexView.as_view()),
-    path('planet_list/', PlanetList.as_view()),
+    path('admin/', admin.site.urls, name="admin"),
+    path('', IndexView.as_view(), name="home"),
+    path('planet_list/', PlanetList.as_view(), name="planet_list"),
 ]

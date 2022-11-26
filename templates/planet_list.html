@@ -7,13 +7,13 @@
         <div class="col-12">
             <h2>Explored Planets</h2>
             <div class="row">
-                <div class="col-12 justify-content-center text-center">
+                <div class="col-12 justify-content-center text-center w-100">
                     <button type="button" class="btn btn-dark btn-lg text-uppercase">Add Planet</button>
                 </div>
             </div>
             <div class="row">
                 {% for planet in planet_list %}
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                     <div class="card mb-4 bg-dark bg-opacity-75">
                         <div class="card-body">
                             <h3 class="card-title">{{ planet.name }}</h3>
@@ -28,15 +28,14 @@
                         </div>
                     </div>
                 </div>
+
+                {% if forloop.counter|divisibleby:3 %}
             </div>
-
-            {% if forloop.counter|divisibleby:3 %}
+            <div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
-        <div>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
 
 
-    {% endblock %}
+        {% endblock %}

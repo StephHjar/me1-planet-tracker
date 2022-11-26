@@ -43,13 +43,12 @@ p {
 
 .planet-list {
     margin-left: 0;
-    padding-top: 9%;
 }
 
 
 .btn {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.75rem;
+    font-size: 3.5vw;
     margin-bottom: 5vh;
 }
 
