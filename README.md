@@ -125,6 +125,11 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [This thread](https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right) on StackOverflow helped with aligning the nav bar items to the right of the page.
 - I used [this article](https://mdbootstrap.com/how-to/bootstrap/text-responsive/#:~:text=You%20can%20make%20text%20responsive,%3D%201%25%20of%20viewport%20width.) on MDBootstrap to make the h1 text responsive.
 - I used [this article](https://5balloons.info/how-to-align-content-vertically-inside-a-div-in-bootstrap-5#:~:text=Align%20%2F%20Center%20content%20Vertically,the%20middle%20of%20the%20div.) on 5balloons to vertically and horizontally align text in a div using Bootstrap.
+- I used the following articles while researching how to populate a list of planets in the 'name' value of my Planet model:
+  - [Django documentation on field choices](https://docs.djangoproject.com/en/4.1/ref/models/fields/#field-choices)
+  - [This thread](https://stackoverflow.com/questions/25169372/how-to-make-a-long-list-of-choices-for-a-charfield-in-django) on StackOverflow gave me the idea of loading the list from a separate .txt file.
+  - [This article](https://www.geeksforgeeks.org/how-to-split-a-file-into-a-list-in-python/) on GeeksForGeeks for inspiration on how to convert the raw text file into a list.
+  - [This thread](https://stackoverflow.com/questions/46872329/django-migration-error-errors-choices-must-be-an-iterable-e-g-a-list-or-t) on StackOverflow helped me to link the PLANET_CHOICES list to my model correctly. 
 
 ### Media
 
