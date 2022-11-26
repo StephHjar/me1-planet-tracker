@@ -6,7 +6,32 @@
     <div class="row">
         <div class="col-12">
             <h2>Explored Planets</h2>
+            <div class="row">
+                {% for planet in planet_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-dark bg-opacity-75">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ planet.name }}</h3>
+                            <p class="card-text"><b>Fully Explored?</b> {{ planet.fully_explored }}</p>
+                            <p class="card-text"><b>Turian Insignia?</b> {{ planet.turian_insignia }}</p>
+                            <p class="card-text"><b>Asari Writing?</b> {{ planet.asari_writing }}</p>
+                            <p class="card-text"><b>Prothean Disc?</b> {{ planet.prothean_disc }}</p>
+                            <p class="card-text"><b>Valuable Mineral?</b> {{ planet.mineral }}</p>
+                            <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
+                            <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
+                            <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 %}
         </div>
+        <div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
 
-        {% endblock %}
+    {% endblock %}
