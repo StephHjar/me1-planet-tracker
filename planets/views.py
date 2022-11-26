@@ -8,14 +8,14 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-class PlanetList(TemplateView):
-    template_name = 'planet_list.html'
-
-
-# class PlanetList(generic.ListView):
-#     model = Planet
-#     queryset = Planet.objects.order_by('-created_on')
+# class PlanetList(TemplateView):
 #     template_name = 'planet_list.html'
+
+
+class PlanetList(generic.ListView):
+    model = Planet
+    queryset = Planet.objects.order_by('-created_on')
+    template_name = 'planet_list.html'
 
 
 # def get_planet_list(request):
