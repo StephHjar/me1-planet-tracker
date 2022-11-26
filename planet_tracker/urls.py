@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from planets.views import get_planet_list, home
+from planets.views import IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('planet_list/', get_planet_list, name='get_planet_list'),
-    path('', home, name='home'),
+    path('', IndexView.as_view()),
 ]
