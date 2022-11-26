@@ -4,11 +4,21 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #FFF;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 6vw;
+}
+
+h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4.5vw;
+}
+
+p {
+    font-size: 1.5vw;
 }
 
 .navbar-nav {
