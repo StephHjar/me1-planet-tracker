@@ -124,6 +124,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The navigation bar was modified from [Bootstrap's documentation](https://getbootstrap.com/docs/5.1/components/navbar/).
 - [This thread](https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right) on StackOverflow helped with aligning the nav bar items to the right of the page.
 - I used [this article](https://mdbootstrap.com/how-to/bootstrap/text-responsive/#:~:text=You%20can%20make%20text%20responsive,%3D%201%25%20of%20viewport%20width.) on MDBootstrap to make the h1 text responsive.
+- I used [this article](https://5balloons.info/how-to-align-content-vertically-inside-a-div-in-bootstrap-5#:~:text=Align%20%2F%20Center%20content%20Vertically,the%20middle%20of%20the%20div.) on 5balloons to vertically and horizontally align text in a div using Bootstrap.
 
 ### Media
 
