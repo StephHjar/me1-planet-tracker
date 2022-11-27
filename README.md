@@ -130,6 +130,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
   - [This thread](https://stackoverflow.com/questions/25169372/how-to-make-a-long-list-of-choices-for-a-charfield-in-django) on StackOverflow gave me the idea of loading the list from a separate .txt file.
   - [This article](https://www.geeksforgeeks.org/how-to-split-a-file-into-a-list-in-python/) on GeeksForGeeks for inspiration on how to convert the raw text file into a list.
   - [This thread](https://stackoverflow.com/questions/46872329/django-migration-error-errors-choices-must-be-an-iterable-e-g-a-list-or-t) on StackOverflow helped me to link the PLANET_CHOICES list to my model correctly. 
+  - The 'LoginRequiredMixin section of [Django's documentation](https://docs.djangoproject.com/en/4.1/topics/auth/default/) was used to set up the class-based view for planet_list.html. This ensure that a user has to be logged in to access the page, and that they can only see the planets that they have added to the database.
 
 ### Media
 
