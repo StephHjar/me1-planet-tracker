@@ -14,4 +14,5 @@ class PlanetList(LoginRequiredMixin, ListView):
     template_name = 'planet_list.html'
 
     def get_queryset(self):
-        return Planet.objects.filter(user=self.request.user).order_by('-created_on')
+        return Planet.objects.filter(user=self.request.user). \
+            order_by('-created_on')
