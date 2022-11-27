@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Header image on home page -->
-<div class="header-image text-center">
-    <img src="../../../static/images/Normandy_Render.webp" class="img-fluid"
-        alt="Image of the Normandy spaceship from Mass Effect 1">
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col header-image text-center mt-0 ms-auto">
+            <img src="{% static 'images/Normandy_Render.webp' %}" class="img-fluid"
+                alt="Image of the Normandy spaceship from Mass Effect 1">
+        </div>
+    </div>
 </div>
 
-<div class="container text-center">
-    <div class="row">
+<div class="container text-center home-content">
+    <div class="row ms-auto">
         <div class="col-6 bg-dark bg-opacity-75">
             <h2>Hello, Commander Shepard!</h2>
             <p>You're busy saving the galaxy. How could you possibly remember every planet you've visited, and what you

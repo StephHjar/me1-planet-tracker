@@ -3,8 +3,19 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin-top: 0;
     color: #FFF;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    z-index: -999;
+}
+
+.home-content {
+    margin-top: 15%;
 }
 
 h1 {
