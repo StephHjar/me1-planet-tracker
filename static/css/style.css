@@ -31,12 +31,12 @@ p {
     text-align: right;
 }
 
-.sign-up {
+a {
     color: #FFF;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-.sign-up:hover {
+a:hover {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
 }
@@ -48,7 +48,7 @@ p {
 
 .btn {
     font-family: 'Bebas Neue', cursive;
-    font-size: 3.5vw;
+    /* font-size: 3.5vw; */
     margin-bottom: 5vh;
 }
 
