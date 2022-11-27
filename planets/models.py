@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-file = open('planets/planets.txt', 'r')
-PLANET_CHOICES = [[x.rstrip('\n'), x.rstrip('\n')] for x in file]
-
 
 class Planet(models.Model):
+
+    file = open('planets/planets.txt', 'r')
+    PLANET_CHOICES = [[x.rstrip('\n'), x.rstrip('\n')] for x in file]
+
     name = models.CharField(max_length=200, choices=PLANET_CHOICES, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name='planets', null=True)
