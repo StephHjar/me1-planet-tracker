@@ -4,7 +4,6 @@ from cloudinary.models import CloudinaryField
 
 file = open('planets/planets.txt', 'r')
 PLANET_CHOICES = [[x.rstrip('\n'), x.rstrip('\n')] for x in file]
-print(PLANET_CHOICES)
 
 
 class Planet(models.Model):
