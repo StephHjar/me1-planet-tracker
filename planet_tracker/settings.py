@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
     'planets',
 ]
 
@@ -55,6 +56,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/planet_list/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 

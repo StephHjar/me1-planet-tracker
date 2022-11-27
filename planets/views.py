@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from planets.models import Planet
+from .forms import PlanetForm
 
 
 class IndexView(TemplateView):
@@ -18,5 +19,7 @@ class PlanetList(LoginRequiredMixin, ListView):
             order_by('-created_on')
 
 
-class AddPlanet(TemplateView):
+class AddPlanet(CreateView):
+    form_class = PlanetForm
+    model = Planet
     template_name = 'add_planet.html'
