@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Sub-header -->
+<div class="container-fluid planet-list">
+    <div class="row">
+        <div class="col-12">
+            <h2>Add A Planet</h2>
+        </div>
+        {% if user.is_authenticated %}
+
+        {% else %}
+        <div class="row">
+            <div class="col justify-content-center text-center">
+                <p>Please <a href="{% url 'account_login' %}">log in</a> or <a href="{% url 'account_signup'%}">sign
+                        up</a>
+                    to add a planet!</p>
+            </div>
+        </div>
+        {% endif %}
+
+
+        {% endblock %}
