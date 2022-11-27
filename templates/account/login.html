@@ -15,7 +15,7 @@
       <p>{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
     </div>
-    <div class="col-md-auto p-3 bg-dark bg-opacity-75">
+    <div class="col-md-auto p-3 text-start bg-dark bg-opacity-75">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
