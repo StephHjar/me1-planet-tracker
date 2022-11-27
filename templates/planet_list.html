@@ -7,49 +7,48 @@
         <div class="col-12">
             <h2>Explored Planets</h2>
         </div>
-    </div>
-    {% if user.is_authenticated %}
-    <div class="row text-center">
-        <div class="col-12">
-            <button type="button" class="btn btn-dark btn-lg text-uppercase">Add Planet</button>
-        </div>
-    </div>
-    <div class="row">
-        {% for planet in planet_list %}
-        <div class="col-md-3 col-6">
-            <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3">
-                <div class="card-body">
-                    <h3 class="card-title">{{ planet.name }}</h3>
-                    <p class="card-text"><b>Fully Explored?</b> {{ planet.fully_explored }}</p>
-                    <p class="card-text"><b>Turian Insignia?</b> {{ planet.turian_insignia }}</p>
-                    <p class="card-text"><b>Asari Writing?</b> {{ planet.asari_writing }}</p>
-                    <p class="card-text"><b>Prothean Disc?</b> {{ planet.prothean_disc }}</p>
-                    <p class="card-text"><b>Valuable Mineral?</b> {{ planet.mineral }}</p>
-                    <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
-                    <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
-                    <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
-                </div>
+        {% if user.is_authenticated %}
+        <div class="row justify-content-center text-center">
+            <div class="col">
+                <button type="button" class="btn btn-dark btn-lg text-uppercase">Add Planet</button>
             </div>
         </div>
-        {% if forloop.counter|divisibleby:3 %}
+        <div class="row">
+            {% for planet in planet_list %}
+            <div class="col-md-3 col-6">
+                <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ planet.name }}</h3>
+                        <p class="card-text"><b>Fully Explored?</b> {{ planet.fully_explored }}</p>
+                        <p class="card-text"><b>Turian Insignia?</b> {{ planet.turian_insignia }}</p>
+                        <p class="card-text"><b>Asari Writing?</b> {{ planet.asari_writing }}</p>
+                        <p class="card-text"><b>Prothean Disc?</b> {{ planet.prothean_disc }}</p>
+                        <p class="card-text"><b>Valuable Mineral?</b> {{ planet.mineral }}</p>
+                        <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
+                        <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
+                        <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row">
+            {% endif %}
+            {% empty %}
+            <div class="col text-center justify-content-center">
+                <p>You haven't added any planets yet! Why not start now?</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    <div class="row">
-        {% endif %}
-    </div>
-    {% empty %}
-    <div class="col-12 text-center">
-        <p>You haven't added any planets yet! Why not start now?</p>
-    </div>
-    {% endfor %}
-
     {% else %}
-    <div class="row text-center">
-        <div class="col-12">
+    <div class="row">
+        <div class="col justify-content-center text-center">
             <p>Please <a href="{% url 'account_login' %}">log in</a> or <a href="{% url 'account_signup'%}">sign up</a>
                 to view your list of explored planets!</p>
         </div>
     </div>
     {% endif %}
-</div>
 
-{% endblock %}
+
+    {% endblock %}
