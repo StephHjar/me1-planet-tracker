@@ -1,3 +1,7 @@
 from django.test import TestCase
+from planets.models import Planet
 
-# Create your tests here.
+
+class PlanetTestCase(TestCase):
+    def setUp(self):
+        Planet.objects.create(name="Invalid")
