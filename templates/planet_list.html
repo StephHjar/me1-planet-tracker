@@ -7,7 +7,8 @@
         <div class="col-12">
             <h2>Explored Planets</h2>
         </div>
-        <div class="row 100vw">
+        {% if user.is_authenticated %}
+        <div class="row">
             <div class="col justify-content-center text-center w-100">
                 <button type="button" class="btn btn-dark btn-lg text-uppercase">Add Planet</button>
             </div>
@@ -36,6 +37,14 @@
             {% endfor %}
         </div>
     </div>
+    {% else %}
+    <div class="row">
+        <div class="col justify-content-center text-center">
+            <p>Please <a href="{% url 'account_login' %}">log in</a> or <a href="{% url 'account_signup'%}">sign up</a>
+                to view your list of explored planets!</p>
+        </div>
+    </div>
+    {% endif %}
 
 
     {% endblock %}
