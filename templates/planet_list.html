@@ -34,6 +34,12 @@
         </div>
         <div class="row">
             {% endif %}
+            {% empty %}
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>You haven't added any planets yet! Why not start now?</p>
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
