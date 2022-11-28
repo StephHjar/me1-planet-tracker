@@ -130,9 +130,16 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
   - [This thread](https://stackoverflow.com/questions/25169372/how-to-make-a-long-list-of-choices-for-a-charfield-in-django) on StackOverflow gave me the idea of loading the list from a separate .txt file.
   - [This article](https://www.geeksforgeeks.org/how-to-split-a-file-into-a-list-in-python/) on GeeksForGeeks for inspiration on how to convert the raw text file into a list.
   - [This thread](https://stackoverflow.com/questions/46872329/django-migration-error-errors-choices-must-be-an-iterable-e-g-a-list-or-t) on StackOverflow helped me to link the PLANET_CHOICES list to my model correctly. 
-  - The 'LoginRequiredMixin section of [Django's documentation](https://docs.djangoproject.com/en/4.1/topics/auth/default/) was used to set up the class-based view for planet_list.html. This ensure that a user has to be logged in to access the page, and that they can only see the planets that they have added to the database.
-  - I used [this thread](https://stackoverflow.com/questions/56604833/django-if-table-in-template-is-empty-display-something-else) on StackOverflow to add a message to my planets_list.html page if the list of planets is empty.
-  - [This thread](https://stackoverflow.com/questions/4172448/is-it-possible-to-break-a-long-line-to-multiple-lines-in-python) on StackOverflow helped me include line breaks in long lines of Python code.
+- The 'LoginRequiredMixin section of [Django's documentation](https://docs.djangoproject.com/en/4.1/topics/auth/default/) was used to set up the class-based view for planet_list.html. This ensure that a user has to be logged in to access the page, and that they can only see the planets that they have added to the database.
+- I used [this thread](https://stackoverflow.com/questions/56604833/django-if-table-in-template-is-empty-display-something-else) on StackOverflow to add a message to my planets_list.html page if the list of planets is empty.
+- [This thread](https://stackoverflow.com/questions/4172448/is-it-possible-to-break-a-long-line-to-multiple-lines-in-python) on StackOverflow helped me include line breaks in long lines of Python code.
+- I used the following articles while researching how to display only a user's own planets to them when logged in, and have them add planets to only that list:
+  - [This thread](https://stackoverflow.com/questions/64916109/how-to-access-a-logged-in-user-from-a-class-based-view) on StackOverflow showed me how to define the logged in user in a class-based view.
+  - [This thread](https://stackoverflow.com/questions/72034201/how-to-populate-user-field-with-current-user-in-django-models-via-forms) on StackOverflow helped me automatically populate the logged-in user in the 'user' field of the "Add Planet" form, when adding a new planet.
+  - [This article](https://www.geeksforgeeks.org/createview-class-based-views-django/) on GeeksForGeeks helped with using a CreateView class-based view for my "Add Planet" form.
+  - [This thread](https://stackoverflow.com/questions/10382838/how-to-set-foreignkey-in-createview) on StackOverflow helped me with using the form_valid method as part of CreateView.
+  - [This thread](https://stackoverflow.com/questions/6266415/django-class-based-generic-view-no-url-to-redirect-to) on StackOverflow showed me how to redirect the user back to the planet list after successfully adding a planet.
+
 
 ### Media
 

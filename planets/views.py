@@ -3,7 +3,6 @@ from django.views import generic
 from django.views.generic import TemplateView, ListView, CreateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from planets.models import Planet
-# from planets.forms import PlanetForm
 
 
 class IndexView(TemplateView):
