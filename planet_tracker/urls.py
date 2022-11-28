@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from planets.views import IndexView, PlanetList, AddPlanet
+from planets.views import IndexView, PlanetList, AddPlanet, EditPlanet
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', IndexView.as_view(), name='home'),
     path('planet_list/', PlanetList.as_view(), name='planet_list'),
     path('accounts/', include('allauth.urls')),
-    path('add_planet/', AddPlanet.as_view(), name='add_planet')
+    path('add_planet/', AddPlanet.as_view(), name='add_planet'),
+    path('edit_planet/', EditPlanet.as_view(), name='edit_planet'),
 ]

@@ -30,4 +30,13 @@ class AddPlanet(CreateView):
         return super(AddPlanet, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('planet_list')
+        return redirect('planet_list')
+
+
+class EditPlanet(CreateView):
+    model = Planet
+    template_name = 'edit_planet.html'
+    fields = ['name', 'fully_explored', 'turian_insignia',
+              'asari_writing', 'prothean_disc', 'mineral', 'medallion',
+              'notes']
+              

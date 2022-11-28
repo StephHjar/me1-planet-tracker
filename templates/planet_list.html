@@ -27,14 +27,15 @@
                         <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
                         <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
                         <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
-                        <p class="card-text"><a href="#" class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
+                        <p class="card-text"><a href="{% url 'edit_planet' %}"
+                                class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
                         </p>
                     </div>
                 </div>
             </div>
             {% if forloop.counter|divisibleby:4 %}
         </div>
-        <div class="row">
+        <div class=" row">
             {% endif %}
             {% empty %}
             <div class="col text-center justify-content-center">
