@@ -59,13 +59,19 @@ a:hover {
 
 .btn {
     font-family: 'Bebas Neue', cursive;
-    /* font-size: 3.5vw; */
     margin-bottom: 5vh;
 }
 
-.btn:hover {
+.btn-dark:hover {
     border-color: #fff;
     border-width: 1px;
+}
+
+.btn-light:hover {
+    border-color: #fff;
+    background-color: #000;
+    border-width: 1px;
+    color: #fff;
 }
 
 .card-title {
