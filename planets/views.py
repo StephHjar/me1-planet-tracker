@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from django.views.generic import TemplateView, ListView, CreateView, FormView, View
+from django.views.generic import (TemplateView,
+                                  ListView, CreateView,
+                                  FormView, View)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
 from .forms import EditPlanetForm, AddPlanetForm
@@ -76,9 +78,3 @@ class EditPlanet(View):
             edit_planet_form = EditPlanetForm(instance=planet)
 
         return redirect('planet_list')
-
-    # model = Planet
-    # template_name = 'edit_planet.html'
-    # fields = ['name', 'fully_explored', 'turian_insignia',
-    #           'asari_writing', 'prothean_disc', 'mineral', 'medallion',
-    #           'notes']
