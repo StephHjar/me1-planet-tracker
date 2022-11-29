@@ -23,5 +23,5 @@ urlpatterns = [
     path('planet_list/', PlanetList.as_view(), name='planet_list'),
     path('accounts/', include('allauth.urls')),
     path('add_planet/', AddPlanet.as_view(), name='add_planet'),
-    path('edit_planet/', EditPlanet.as_view(), name='edit_planet'),
+    path('edit_planet/<int:id>', EditPlanet.as_view(), name='edit_planet'),
 ]

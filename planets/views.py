@@ -1,6 +1,6 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.views.generic import TemplateView, ListView, CreateView, FormView
+from django.views.generic import TemplateView, ListView, CreateView, FormView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from planets.models import Planet
 
@@ -34,9 +34,30 @@ class AddPlanet(CreateView):
         return redirect('planet_list')
 
 
-class EditPlanet(CreateView):
-    model = Planet
-    template_name = 'edit_planet.html'
-    fields = ['name', 'fully_explored', 'turian_insignia',
-              'asari_writing', 'prothean_disc', 'mineral', 'medallion',
-              'notes']
+class EditPlanet(View):
+
+    def get(self, request, id, *args, **kwargs):
+        queryset = Planet.objects.filter(user=self.request.user)
+        planet = get_object_or_404(queryset, id=id)
+        name = planet.name
+
+        return render(
+            request,
+            'edit_planet.html',
+            {
+                "name": name,
+                "fully_explored": post.fully_explored,
+                "turian_insignia": post.turian_insignia,
+                "asari_writing": post.asari_writing,
+                "prothean_disc": post.prothean_disc,
+                "mineral": post.mineral,
+                "medallion": post.medallion,
+                "notes": post.notes
+            }
+        )
+
+    # model = Planet
+    # template_name = 'edit_planet.html'
+    # fields = ['name', 'fully_explored', 'turian_insignia',
+    #           'asari_writing', 'prothean_disc', 'mineral', 'medallion',
+    #           'notes']

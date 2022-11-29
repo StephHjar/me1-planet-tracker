@@ -27,7 +27,7 @@
                         <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
                         <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
                         <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
-                        <p class="card-text"><a href="{% url 'edit_planet' %}"
+                        <p class="card-text"><a href="{% url 'edit_planet' planet.id %}"
                                 class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
                         </p>
                     </div>
