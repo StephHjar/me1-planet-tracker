@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from django.views.generic import (TemplateView,
-                                  ListView, CreateView,
-                                  FormView, View)
+from django.views.generic import (TemplateView, ListView, View)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
 from .forms import EditPlanetForm, AddPlanetForm
@@ -22,7 +20,7 @@ class PlanetList(LoginRequiredMixin, ListView):
             order_by('-created_on')
 
 
-class AddPlanet(TemplateView):
+class AddPlanet(View):
 
     def get(self, request, *args, **kwargs):
 
