@@ -23,7 +23,11 @@
                 you explore the galaxy.</p>
         </div>
         <div class="col-6 d-flex align-items-center justify-content-center">
+            {% if user.is_authenticated %}
+            <h2 class="text-uppercase"><a class="sign-up" href="{% url 'planet_list' %}">View Dashboard</a></h2>
+            {% else %}
             <h2 class="text-uppercase"><a class="sign-up" href="{% url 'account_signup' %}">Sign Up!</a></h2>
+            {% endif %}
         </div>
     </div>
 </div>
