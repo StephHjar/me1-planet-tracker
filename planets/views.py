@@ -12,6 +12,7 @@ class IndexView(TemplateView):
 class PlanetList(LoginRequiredMixin, ListView):
     model = Planet
     template_name = 'planet_list.html'
+    paginate_by = 6
 
     def get_queryset(self):
         return Planet.objects.filter(user=self.request.user). \
@@ -39,4 +40,3 @@ class EditPlanet(CreateView):
     fields = ['name', 'fully_explored', 'turian_insignia',
               'asari_writing', 'prothean_disc', 'mineral', 'medallion',
               'notes']
-              
