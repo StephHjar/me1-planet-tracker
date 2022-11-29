@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.views.generic import TemplateView, ListView, CreateView, FormView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from planets.models import Planet
+from .models import Planet
+from .forms import EditPlanetForm, AddPlanetForm
 
 
 class IndexView(TemplateView):
@@ -19,18 +20,28 @@ class PlanetList(LoginRequiredMixin, ListView):
             order_by('-created_on')
 
 
-class AddPlanet(CreateView):
-    model = Planet
-    template_name = 'add_planet.html'
-    fields = ['name', 'fully_explored', 'turian_insignia',
-              'asari_writing', 'prothean_disc', 'mineral', 'medallion',
-              'notes']
+class AddPlanet(TemplateView):
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(AddPlanet, self).form_valid(form)
+    def get(self, request, *args, **kwargs):
 
-    def get_success_url(self):
+        return render(
+            request,
+            'add_planet.html',
+            {
+                "add_planet_form": AddPlanetForm(),
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        add_planet_form = AddPlanetForm(data=request.POST)
+
+        if add_planet_form.is_valid():
+            add_planet_form.instance.user = self.request.user
+            add_planet_form.save()
+        else:
+            add_planet_form = AddPlanetForm()
+
         return redirect('planet_list')
 
 
@@ -46,6 +57,7 @@ class EditPlanet(View):
             'edit_planet.html',
             {
                 "name": name,
+                "edit_planet_form": EditPlanetForm(),
                 "fully_explored": planet.fully_explored,
                 "turian_insignia": planet.turian_insignia,
                 "asari_writing": planet.asari_writing,
