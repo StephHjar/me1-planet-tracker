@@ -13,7 +13,7 @@ class IndexView(TemplateView):
 class PlanetList(LoginRequiredMixin, ListView):
     model = Planet
     template_name = 'planet_list.html'
-    paginate_by = 6
+    paginate_by = 8
 
     def get_queryset(self):
         return Planet.objects.filter(user=self.request.user). \
