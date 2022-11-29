@@ -46,13 +46,13 @@ class EditPlanet(View):
             'edit_planet.html',
             {
                 "name": name,
-                "fully_explored": post.fully_explored,
-                "turian_insignia": post.turian_insignia,
-                "asari_writing": post.asari_writing,
-                "prothean_disc": post.prothean_disc,
-                "mineral": post.mineral,
-                "medallion": post.medallion,
-                "notes": post.notes
+                "fully_explored": planet.fully_explored,
+                "turian_insignia": planet.turian_insignia,
+                "asari_writing": planet.asari_writing,
+                "prothean_disc": planet.prothean_disc,
+                "mineral": planet.mineral,
+                "medallion": planet.medallion,
+                "notes": planet.notes
             }
         )
 
