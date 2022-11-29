@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-
+<!-- Welcome text on home page -->
 <div class="container text-center home-content">
     <div class="row ms-auto">
         <div class="col-6 bg-dark bg-opacity-75">
@@ -23,9 +23,11 @@
                 you explore the galaxy.</p>
         </div>
         <div class="col-6 d-flex align-items-center justify-content-center">
+            <!-- Link to planet dashboard if user is logged in -->
             {% if user.is_authenticated %}
             <h2 class="text-uppercase"><a class="sign-up" href="{% url 'planet_list' %}">View Dashboard</a></h2>
             {% else %}
+            <!-- Sign up link if user is not logged in -->
             <h2 class="text-uppercase"><a class="sign-up" href="{% url 'account_signup' %}">Sign Up!</a></h2>
             {% endif %}
         </div>
