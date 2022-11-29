@@ -57,16 +57,25 @@ class EditPlanet(View):
             'edit_planet.html',
             {
                 "name": name,
-                "edit_planet_form": EditPlanetForm(),
-                "fully_explored": planet.fully_explored,
-                "turian_insignia": planet.turian_insignia,
-                "asari_writing": planet.asari_writing,
-                "prothean_disc": planet.prothean_disc,
-                "mineral": planet.mineral,
-                "medallion": planet.medallion,
-                "notes": planet.notes
+                "edit_planet_form": EditPlanetForm(instance=planet),
             }
         )
+
+    def post(self, request, id, *args, **kwargs):
+        queryset = Planet.objects.filter(user=self.request.user)
+        planet = get_object_or_404(queryset, id=id)
+        name = planet.name
+
+        edit_planet_form = EditPlanetForm(data=request.POST)
+
+        if edit_planet_form.is_valid():
+            edit_planet_form.instance.user = self.request.user
+            edit_planet_form.instance.name = name
+            edit_planet_form.save()
+        else:
+            edit_planet_form = EditPlanetForm(instance=planet)
+
+        return redirect('planet_list')
 
     # model = Planet
     # template_name = 'edit_planet.html'
