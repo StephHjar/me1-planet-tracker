@@ -1,0 +1,9 @@
+from planets import views
+from django.urls import path
+
+urlpatterns = [
+    path('', views.IndexView.as_view(), name='home'),
+    path('planet_list/', views.PlanetList.as_view(), name='planet_list'),
+    path('add_planet/', views.AddPlanet.as_view(), name='add_planet'),
+    path('edit_planet/<int:id>', views.EditPlanet.as_view(), name='edit_planet'),
+]
