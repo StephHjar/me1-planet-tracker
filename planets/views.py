@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic import (TemplateView, ListView, View)
+from django.views.generic import TemplateView, ListView, View, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
 from .forms import EditPlanetForm, AddPlanetForm
@@ -76,3 +77,8 @@ class EditPlanet(View):
             edit_planet_form = EditPlanetForm(instance=planet)
 
         return redirect('planet_list')
+
+
+class DeletePlanet(DeleteView):
+    model = Planet
+    success_url = reverse_lazy('planet_list')

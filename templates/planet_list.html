@@ -30,7 +30,8 @@
                         <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
                         <p class="card-text"><a href="{% url 'edit_planet' planet.id %}"
                                 class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
-                        </p>
+                            <a href="{% url 'delete_planet' planet.id %}"
+                                class="btn btn-light text-uppercase mb-0 mt-1">Delete</a></p>
                     </div>
                 </div>
             </div>
