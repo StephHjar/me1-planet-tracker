@@ -139,7 +139,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
   - [This article](https://www.geeksforgeeks.org/createview-class-based-views-django/) on GeeksForGeeks helped with using a CreateView class-based view for my "Add Planet" form.
   - [This thread](https://stackoverflow.com/questions/10382838/how-to-set-foreignkey-in-createview) on StackOverflow helped me with using the form_valid method as part of CreateView.
   - [This thread](https://stackoverflow.com/questions/6266415/django-class-based-generic-view-no-url-to-redirect-to) on StackOverflow showed me how to redirect the user back to the planet list after successfully adding a planet.
-
+- [This page](https://www.pythontutorial.net/django-tutorial/django-deleteview/) on PythonTutorial.net helped me create my DeleteView.
 
 ### Media
 
