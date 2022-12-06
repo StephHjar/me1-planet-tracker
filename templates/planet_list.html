@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
 <!-- Sub-header -->
 <div class="container-fluid planet-list">
     <div class="row">
@@ -20,12 +22,15 @@
                 <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3">
                     <div class="card-body">
                         <h3 class="card-title">{{ planet.name }}</h3>
-                        <p class="card-text"><b>Fully Explored?</b> {{ planet.fully_explored }}</p>
+                        {{ planet_list_form | crispy }}
+                        {% csrf_token %}
+                        <!-- <p class="card-text"><b>Fully Explored?</b> {% if planet.fully_explored %} ✅ {% else %} ❌
+                            {% endif %}</p>
                         <p class="card-text"><b>Turian Insignia?</b> {{ planet.turian_insignia }}</p>
                         <p class="card-text"><b>Asari Writing?</b> {{ planet.asari_writing }}</p>
                         <p class="card-text"><b>Prothean Disc?</b> {{ planet.prothean_disc }}</p>
                         <p class="card-text"><b>Valuable Mineral?</b> {{ planet.mineral }}</p>
-                        <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p>
+                        <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p> -->
                         <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
                         <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
                         <p class="card-text"><a href="{% url 'edit_planet' planet.id %}"

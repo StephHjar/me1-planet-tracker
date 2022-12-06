@@ -4,7 +4,7 @@ from django.views import generic
 from django.views.generic import TemplateView, ListView, View, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
-from .forms import EditPlanetForm, AddPlanetForm
+from .forms import EditPlanetForm, AddPlanetForm, PlanetListForm
 
 
 class IndexView(TemplateView):
@@ -19,6 +19,11 @@ class PlanetList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Planet.objects.filter(user=self.request.user). \
             order_by('-created_on')
+
+    def get_context_data(self, **kwargs):
+        context = super(PlanetList, self).get_context_data(**kwargs)
+        context['planet_list_form'] = PlanetListForm(instance=Planet)
+        return context
 
 
 class AddPlanet(View):
