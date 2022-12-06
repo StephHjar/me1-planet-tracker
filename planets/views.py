@@ -22,8 +22,25 @@ class PlanetList(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PlanetList, self).get_context_data(**kwargs)
-        context['planet_list_form'] = PlanetListForm(instance=Planet)
+        context['planet'] = Planet.objects.get(id=self.kwargs['id'])
+        context['planet_list_form'] = PlanetListForm(instance=planet)
         return context
+
+    def post(self, request, id, *args, **kwargs):
+        queryset = Planet.objects.filter(user=self.request.user)
+        planet = get_object_or_404(queryset, id=id)
+        name = planet.name
+
+        edit_planet_form = EditPlanetForm(data=request.POST)
+
+        if edit_planet_form.is_valid():
+            edit_planet_form.instance.user = self.request.user
+            edit_planet_form.instance.name = name
+            edit_planet_form.save()
+        else:
+            edit_planet_form = EditPlanetForm(instance=planet)
+
+        return redirect('planet_list')
 
 
 class AddPlanet(View):
