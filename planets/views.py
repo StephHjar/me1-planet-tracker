@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
+from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
@@ -40,6 +41,7 @@ class AddPlanet(View):
         if add_planet_form.is_valid():
             add_planet_form.instance.user = self.request.user
             add_planet_form.save()
+            messages.success(request, 'You have added a planet to your tracker!')
         else:
             add_planet_form = AddPlanetForm()
 
