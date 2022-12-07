@@ -4,7 +4,7 @@ from django.views import generic
 from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
-from .forms import EditPlanetForm, AddPlanetForm
+from .forms import AddPlanetForm
 
 
 class IndexView(TemplateView):

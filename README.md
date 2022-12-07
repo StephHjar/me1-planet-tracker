@@ -141,6 +141,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
   - [This thread](https://stackoverflow.com/questions/6266415/django-class-based-generic-view-no-url-to-redirect-to) on StackOverflow showed me how to redirect the user back to the planet list after successfully adding a planet.
 - [This page](https://www.pythontutorial.net/django-tutorial/django-deleteview/) on PythonTutorial.net helped me create my DeleteView.
 - I used some of the answers on [this StackOverflow thread](https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry) to mark the current page as active in my nav bar. 
+- I used [this tutorial](https://www.geeksforgeeks.org/updateview-class-based-views-django/) on GeeksForGeeks to modify my EditView.
 
 ### Media
 
