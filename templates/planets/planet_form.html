@@ -15,12 +15,11 @@
     {% if user.is_authenticated %}
     <div class="row justify-content-center">
         <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
+            <h3 class="card-title">{{ planet.name }}</h3>
             <form method="post">
 
-                <h3 class="card-title">Name: {{ name }}</h3>
-
-                {{ edit_planet_form | crispy }}
                 {% csrf_token %}
+                {{ form.as_p }}
 
         </div>
     </div>

@@ -19,6 +19,7 @@ class Planet(models.Model):
     medallion = models.BooleanField(default=False)
     notes = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created_on']
