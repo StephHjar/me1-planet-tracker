@@ -22,25 +22,38 @@
                 <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3">
                     <div class="card-body">
                         <h3 class="card-title">{{ planet.name }}</h3>
-                        <form method="post">
+                        {% csrf_token %}
+                        <p class="card-text"><b>Turian Insignia?</b> <input type="checkbox" name="turian_insignia"
+                                value="{{ planet.turian_insignia }}" {% if planet.turian_insignia %}checked{% endif %}>
+                        </p>
+                        <p class="card-text"><b>Asari Writing?</b><input type="checkbox" name="asari_writing"
+                                value="{{ planet.asari_writing }}" {% if planet.asari_writing %}checked{% endif %}>
+                        </p>
+                        <p class="card-text"><b>Prothean Disc?</b> <input type="checkbox" name="prothean_disc"
+                                value="{{ planet.prothean_disc }}" {% if planet.prothean_disc %}checked{% endif %}>
+                        </p>
+                        <p class="card-text"><b>Valuable Mineral?</b><input type="checkbox" name="mineral"
+                                value="{{ planet.mineral }}" {% if planet.mineral %}checked{% endif %}></p>
+                        <p class="card-text"><b>League of One Medallion?</b><input type="checkbox" name="medallion"
+                                value="{{ planet.medallion }}" {% if planet.medallion %}checked{% endif %}></p>
+
+                        <!-- <form method="post">
                             {{ planet_list_form | crispy }}
-                            {% csrf_token %}
-                            <!-- <p class="card-text"><b>Fully Explored?</b> {% if planet.fully_explored %} ✅ {% else %} ❌
+                            {% csrf_token %} -->
+                        <!-- <p class="card-text"><b>Fully Explored?</b> {% if planet.fully_explored %} ✅ {% else %} ❌
                             {% endif %}</p>
                         <p class="card-text"><b>Turian Insignia?</b> {{ planet.turian_insignia }}</p>
                         <p class="card-text"><b>Asari Writing?</b> {{ planet.asari_writing }}</p>
                         <p class="card-text"><b>Prothean Disc?</b> {{ planet.prothean_disc }}</p>
                         <p class="card-text"><b>Valuable Mineral?</b> {{ planet.mineral }}</p>
                         <p class="card-text"><b>League of One Medallion?</b> {{ planet.medallion }}</p> -->
-                            <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
-                            <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
-                            <p class="card-text">
-                                <button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Save</button>
-                        </form>
-                        <a href="{% url 'edit_planet' planet.id %}"
-                            class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
-                        <a href="{% url 'delete_planet' planet.id %}"
-                            class="btn btn-light text-uppercase mb-0 mt-1">Delete</a>
+                        <p class="card-text"><b>Notes:</b> {{ planet.notes }}</p>
+                        <p class="card-text"><b>First explored on:</b> {{ planet.created_on }}</p>
+                        <p class="card-text">
+                            <a href="{% url 'edit_planet' planet.id %}"
+                                class="btn btn-light text-uppercase mb-0 mt-1">Edit</a>
+                            <a href="{% url 'delete_planet' planet.id %}"
+                                class="btn btn-light text-uppercase mb-0 mt-1">Delete</a>
                         </p>
 
                     </div>

@@ -16,31 +16,24 @@ class PlanetList(LoginRequiredMixin, ListView):
     template_name = 'planet_list.html'
     paginate_by = 8
 
-    def get_queryset(self):
-        return Planet.objects.filter(user=self.request.user). \
-            order_by('-created_on')
+#     def get_queryset(self):
+#         return Planet.objects.filter(user=self.request.user). \
+#             order_by('-created_on')
 
-    def get_context_data(self, **kwargs):
-        context = super(PlanetList, self).get_context_data(**kwargs)
-        context['planet'] = Planet.objects.get(id=self.kwargs['id'])
-        context['planet_list_form'] = PlanetListForm(instance=planet)
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super(PlanetList, self).get_context_data(**kwargs)
+#         context['planet_list_form'] = PlanetListForm()
+#         return context
 
-    def post(self, request, id, *args, **kwargs):
-        queryset = Planet.objects.filter(user=self.request.user)
-        planet = get_object_or_404(queryset, id=id)
-        name = planet.name
 
-        edit_planet_form = EditPlanetForm(data=request.POST)
+# class PlanetList(generic.UpdateView):
+#     model = Planet
+#     form_class = PlanetListForm
 
-        if edit_planet_form.is_valid():
-            edit_planet_form.instance.user = self.request.user
-            edit_planet_form.instance.name = name
-            edit_planet_form.save()
-        else:
-            edit_planet_form = EditPlanetForm(instance=planet)
-
-        return redirect('planet_list')
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['planets'] = Planet.objects.all().order_by("-created-on")
+#         return context
 
 
 class AddPlanet(View):
