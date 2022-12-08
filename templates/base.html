@@ -68,6 +68,20 @@
             </div>
         </div>
     </nav>
+    <!-- Alert / confirmation messages -->
+    {% if messages %}
+    <div class="container-fluid text-center">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <!-- Main content placeholder-->
     {% block content %}
     <!-- Content goes here -->

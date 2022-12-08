@@ -14,7 +14,7 @@ class IndexView(TemplateView):
 
 class PlanetList(LoginRequiredMixin, ListView):
     model = Planet
-    template_name = 'planet_list.html'
+    template_name = 'planets/planet_list.html'
     paginate_by = 8
 
     def get_queryset(self):
@@ -28,7 +28,7 @@ class AddPlanet(View):
 
         return render(
             request,
-            'add_planet.html',
+            'planets/add_planet.html',
             {
                 "add_planet_form": AddPlanetForm(),
             }
