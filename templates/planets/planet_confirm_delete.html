@@ -12,7 +12,7 @@
     <!-- Shows edit planet form if user is logged in -->
     {% if user.is_authenticated %}
     <div class="row justify-content-center">
-        <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
+        <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start">
             <form method="post">
 
                 {% csrf_token %}
