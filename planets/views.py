@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
-from .forms import AddPlanetForm
+from .forms import AddPlanetForm, EditPlanetForm
 
 
 class IndexView(TemplateView):
@@ -42,7 +42,7 @@ class AddPlanet(View):
             add_planet_form.instance.user = self.request.user
             name = add_planet_form.cleaned_data.get("name")
             add_planet_form.save()
-            messages.success(request, 'You have added %s to your planet dashboard!' % name)
+            messages.success(request, 'You have added %(planet)s to your planet dashboard!' % name)
         else:
             add_planet_form = AddPlanetForm()
 
@@ -52,11 +52,10 @@ class AddPlanet(View):
 class EditPlanet(UpdateView):
 
     model = Planet
-
-    fields = ['fully_explored', 'turian_insignia', 'asari_writing',
-              'prothean_disc', 'mineral', 'medallion', 'notes']
+    form_class = EditPlanetForm
 
     success_url = "/planet_list"
+    success_message = "%(planet)s was updated successfully!"
 
 
 class DeletePlanet(DeleteView):
