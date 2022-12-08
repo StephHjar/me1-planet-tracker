@@ -73,7 +73,7 @@
         </div>
         {% if forloop.counter|divisibleby:4 %}
     </div>
-    <!-- Displays a prompt to add planets if the user's list is empty -->
+    <!-- Displays a message if a search turns up no results -->
     <div class="row">
         {% endif %}
         {% empty %}
@@ -82,6 +82,7 @@
             <p>You haven't explored any planets by that name. Please check your spelling, or go explore!</p>
         </div>
         {% else %}
+        <!-- Displays a prompt to add planets if the user's list is empty -->
         <div class="col text-center justify-content-center">
             <p>You haven't added any planets yet! Why not start now?</p>
         </div>

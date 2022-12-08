@@ -54,7 +54,7 @@ class AddPlanet(View):
             add_planet_form.instance.user = self.request.user
             name = add_planet_form.cleaned_data.get("name")
             add_planet_form.save()
-            messages.success(request, 'You have added %(planet)s to your planet dashboard!' % name)
+            messages.success(request, 'You have added %(planet)s to your planet list!' % name)
         else:
             add_planet_form = AddPlanetForm()
 
@@ -73,7 +73,7 @@ class DeletePlanet(DeleteView):
     model = Planet
     success_url = reverse_lazy('planet_list')
 
-    success_message = "%(name)s was removed from your planet dashboard!"
+    success_message = "%(name)s was removed from your planet list!"
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
