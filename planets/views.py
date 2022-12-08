@@ -94,3 +94,11 @@ class EditPlanet(UpdateView):
 class DeletePlanet(DeleteView):
     model = Planet
     success_url = reverse_lazy('planet_list')
+
+    success_message = "%(name)s was removed from your planet dashboard!"
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        data_to_return = super(DeletePlanet, self).delete(request, *args, **kwargs)
+        messages.success(self.request, self.success_message % obj.__dict__)
+        return data_to_return
