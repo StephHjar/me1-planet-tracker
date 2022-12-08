@@ -144,6 +144,8 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - I used [this tutorial](https://www.geeksforgeeks.org/updateview-class-based-views-django/) on GeeksForGeeks to modify my EditView.
 - I used the [Django documentation on messages](https://docs.djangoproject.com/en/4.1/ref/contrib/messages/) and the [Bootstrap documentation on alerts](https://getbootstrap.com/docs/5.0/components/alerts/) to add and style success / error messages.
 - [This thread on StackOverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) helped me add a success message when a planet is deleted.
+- I used [django-search-views](https://pypi.org/project/django-search-views/) to add search functionality to the planet list page.
+- [This thread](https://stackoverflow.com/questions/3248682/how-to-get-url-of-current-page-including-parameters-in-a-template) on StackOverflow was helpful in displaying a different message to the user if they haven't added any planets to their tracker yet, vs. if their search comes back empty ('search' in the URL).
 
 ### Media
 
