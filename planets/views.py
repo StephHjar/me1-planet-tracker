@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Planet
 from .forms import AddPlanetForm, EditPlanetForm
@@ -49,13 +50,12 @@ class AddPlanet(View):
         return redirect('planet_list')
 
 
-class EditPlanet(UpdateView):
+class EditPlanet(SuccessMessageMixin, UpdateView):
 
     model = Planet
     form_class = EditPlanetForm
-
-    success_url = "/planet_list"
-    success_message = "%(planet)s was updated successfully!"
+    success_url = reverse_lazy('planet_list')
+    success_message = "Planet updated successfully!"
 
 
 class DeletePlanet(DeleteView):
