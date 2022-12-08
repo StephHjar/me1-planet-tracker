@@ -50,9 +50,6 @@
                     <a class="nav-link {% if request.path == '/planet_list/' %}active{% endif %}"
                         href="{% url 'planet_list'%}">Planet List</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Settings</a>
-                    </li>
                     <li class="nav-item {% if request.path == '/accounts/logout/' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
