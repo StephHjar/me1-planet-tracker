@@ -19,7 +19,7 @@ class PlanetList(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Planet.objects.filter(user=self.request.user). \
-            order_by('-created_on')
+            order_by('-updated_on')
 
 
 class AddPlanet(View):
@@ -57,38 +57,6 @@ class EditPlanet(UpdateView):
               'prothean_disc', 'mineral', 'medallion', 'notes']
 
     success_url = "/planet_list"
-
-    # def get(self, request, id, *args, **kwargs):
-    #     queryset = Planet.objects.filter(user=self.request.user)
-    #     planet = get_object_or_404(queryset, id=id)
-    #     name = planet.name
-
-    #     return render(
-    #         request,
-    #         'edit_planet.html',
-    #         {
-    #             "name": name,
-    #             "edit_planet_form": EditPlanetForm(instance=planet),
-    #         }
-    #     )
-
-    # def post(self, request, id, *args, **kwargs):
-    #     queryset = Planet.objects.filter(user=self.request.user)
-    #     planet = get_object_or_404(queryset, id=id)
-    #     name = planet.name
-
-    #     edit_planet_form = EditPlanetForm(data=request.POST)
-
-    #     if edit_planet_form.is_valid():
-    #         edit_planet_form.instance.user = self.request.user
-    #         edit_planet_form.instance.name = name
-    #         edit_planet_form.instance.id = id
-    #         edit_planet_form.instance.created_on = self.request.created_on
-    #         edit_planet_form.save()
-    #     else:
-    #         edit_planet_form = EditPlanetForm(instance=planet)
-
-        # return redirect('planet_list')
 
 
 class DeletePlanet(DeleteView):

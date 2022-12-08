@@ -143,6 +143,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - I used some of the answers on [this StackOverflow thread](https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry) to mark the current page as active in my nav bar. 
 - I used [this tutorial](https://www.geeksforgeeks.org/updateview-class-based-views-django/) on GeeksForGeeks to modify my EditView.
 - I used the [Django documentation on messages](https://docs.djangoproject.com/en/4.1/ref/contrib/messages/) and the [Bootstrap documentation on alerts](https://getbootstrap.com/docs/5.0/components/alerts/) to add and style success / error messages.
+- [This thread on StackOverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) helped me add a success message when a planet is deleted.
 
 ### Media
 
