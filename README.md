@@ -149,6 +149,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The image for the Favicon is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/N7).
 - The background image is by Enric Cruz López on [Pexels](https://www.pexels.com/photo/universe-filled-with-stars-nebula-and-glowing-milky-way-6039245/).
 - The image of the Normandy on the homge page is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/SSV_Normandy).
+- Icons on the planet dashboard are from [FontAwesome](https://fontawesome.com/).
 
 ## Other General Project Advice
 
