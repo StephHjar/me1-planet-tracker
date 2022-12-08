@@ -40,8 +40,9 @@ class AddPlanet(View):
 
         if add_planet_form.is_valid():
             add_planet_form.instance.user = self.request.user
+            name = add_planet_form.cleaned_data.get("name")
             add_planet_form.save()
-            messages.success(request, 'You have added a planet to your tracker!')
+            messages.success(request, 'You have added %s to your planet dashboard!' % name)
         else:
             add_planet_form = AddPlanetForm()
 
