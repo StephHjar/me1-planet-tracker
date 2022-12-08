@@ -5,18 +5,29 @@ from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
 from .models import Planet
-from .forms import AddPlanetForm, EditPlanetForm
+from .forms import AddPlanetForm, EditPlanetForm, PlanetSearchForm
 
 
 class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-class PlanetList(LoginRequiredMixin, ListView):
+class PlanetFilter(BaseFilter):
+    search_fields = {
+        'search_text': ['name', ],
+    }
+
+
+class PlanetList(LoginRequiredMixin, SearchListView):
     model = Planet
     template_name = 'planets/planet_list.html'
     paginate_by = 8
+
+    form_class = PlanetSearchForm
+    filter_class = PlanetFilter
 
     def get_queryset(self):
         return Planet.objects.filter(user=self.request.user). \
