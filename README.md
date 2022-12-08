@@ -142,13 +142,14 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [This page](https://www.pythontutorial.net/django-tutorial/django-deleteview/) on PythonTutorial.net helped me create my DeleteView.
 - I used some of the answers on [this StackOverflow thread](https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry) to mark the current page as active in my nav bar. 
 - I used [this tutorial](https://www.geeksforgeeks.org/updateview-class-based-views-django/) on GeeksForGeeks to modify my EditView.
+- I used the [Django documentation on messages](https://docs.djangoproject.com/en/4.1/ref/contrib/messages/) and the [Bootstrap documentation on alerts](https://getbootstrap.com/docs/5.0/components/alerts/) to add and style success / error messages.
 
 ### Media
 
 - [Favicon.io](https://favicon.io/) was used to create the Favicon.
 - The image for the Favicon is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/N7).
 - The background image is by Enric Cruz López on [Pexels](https://www.pexels.com/photo/universe-filled-with-stars-nebula-and-glowing-milky-way-6039245/).
-- The image of the Normandy on the homge page is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/SSV_Normandy).
+- The image of the Normandy on the home page is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/SSV_Normandy).
 - Icons on the planet dashboard are from [FontAwesome](https://fontawesome.com/).
 
 ## Other General Project Advice
