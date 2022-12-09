@@ -38,8 +38,11 @@ p {
 
 .navbar-nav {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.75rem;
     text-align: right;
+}
+
+.nav-link {
+    padding: 0;
 }
 
 a {
@@ -83,4 +86,10 @@ a:hover {
     font-weight: 300;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+@media (min-width: 991.98px) {
+    .nav-link {
+        font-size: 3vw;
+    }
 }
