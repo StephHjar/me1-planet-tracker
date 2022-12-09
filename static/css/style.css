@@ -28,10 +28,6 @@ h2 {
     font-size: 4.5vw;
 }
 
-p {
-    font-size: 1.5vw;
-}
-
 .navbar {
     display: block;
 }
@@ -91,5 +87,11 @@ a:hover {
 @media (min-width: 991.98px) {
     .nav-link {
         font-size: 3vw;
+    }
+}
+
+@media (max-width: 360px) {
+    #id_search_text {
+        max-width: 100px;
     }
 }
