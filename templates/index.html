@@ -14,7 +14,7 @@
 <!-- Welcome text on home page -->
 <div class="container text-center home-content">
     <div class="row ms-auto">
-        <div class="col-6 bg-dark bg-opacity-75">
+        <div class="col-12 col-lg-6 mb-4 bg-dark bg-opacity-75">
             <h2>Hello, Commander Shepard!</h2>
             <p>You're busy saving the galaxy. How could you possibly remember every planet you've visited, and what you
                 found there? You've probably ended up going back to the same place a few times, haven't you? Well, we're
@@ -22,7 +22,7 @@
             <p>Sign up now to keep track of each planet as you visit it, record any findings, and keep your own notes as
                 you explore the galaxy.</p>
         </div>
-        <div class="col-6 d-flex align-items-center justify-content-center">
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
             <!-- Link to planet dashboard if user is logged in -->
             {% if user.is_authenticated %}
             <h2 class="text-uppercase"><a class="sign-up" href="{% url 'planet_list' %}">View Dashboard</a></h2>
