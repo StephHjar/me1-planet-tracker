@@ -60,15 +60,14 @@ a:hover {
     margin-bottom: 5vh;
 }
 
-.btn-dark:hover {
+/* .btn-dark:hover {
     border-color: #fff;
     border-width: 1px;
-}
+} */
 
 .btn-light:hover {
-    border-color: #fff;
+    border-color: #000;
     background-color: #000;
-    border-width: 1px;
     color: #fff;
 }
 
