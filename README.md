@@ -146,6 +146,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [This thread on StackOverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) helped me add a success message when a planet is deleted.
 - I used [django-search-views](https://pypi.org/project/django-search-views/) to add search functionality to the planet list page.
 - [This thread](https://stackoverflow.com/questions/3248682/how-to-get-url-of-current-page-including-parameters-in-a-template) on StackOverflow was helpful in displaying a different message to the user if they haven't added any planets to their tracker yet, vs. if their search comes back empty ('search' in the URL).
+- The code for the password validation was modified from [this page](https://www.javatpoint.com/confirm-password-validation-in-javascript) on JavaTPoint. 
 
 ### Media
 

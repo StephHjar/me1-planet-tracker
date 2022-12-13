@@ -15,7 +15,8 @@
       </p>
     </div>
     <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
-      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}"
+        onsubmit="return verifyPassword()">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
