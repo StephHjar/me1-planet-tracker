@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib import messages
-from django.views.generic import TemplateView, ListView, View, DeleteView, UpdateView
+from django.views.generic import (TemplateView,
+                                  ListView,
+                                  View,
+                                  DeleteView,
+                                  UpdateView)
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from search_views.search import SearchListView
@@ -54,7 +58,8 @@ class AddPlanet(View):
             add_planet_form.instance.user = self.request.user
             name = add_planet_form.cleaned_data.get("name")
             add_planet_form.save()
-            messages.success(request, 'You have added %(planet)s to your planet list!' % name)
+            messages.success(request,
+                             'You have added %(name)s to your planet list!')
         else:
             add_planet_form = AddPlanetForm()
 
@@ -77,6 +82,8 @@ class DeletePlanet(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
-        data_to_return = super(DeletePlanet, self).delete(request, *args, **kwargs)
+        data_to_return = super(DeletePlanet, self).delete(request,
+                                                          *args,
+                                                          **kwargs)
         messages.success(self.request, self.success_message % obj.__dict__)
         return data_to_return
