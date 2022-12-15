@@ -1,6 +1,6 @@
 // Code adapted from a tutorial on JavaTPoint, credit in README
 function verifyPassword() {
-    var pw = document.getElementById("id_password1").value;
+    let pw = document.getElementById("id_password1").value;
     //check empty password field  
     if (pw == "") {
         window.alert("**Fill in the password please!");
@@ -9,7 +9,7 @@ function verifyPassword() {
 
     //minimum password length validation  
     if (pw.length < 8) {
-        window.alert("**Password length must be atleast 8 characters");
+        window.alert("**Password length must be at least 8 characters");
         return false;
     }
 
@@ -21,3 +21,7 @@ function verifyPassword() {
         alert("Password is correct");
     }
 }
+
+module.exports = {
+    verifyPassword
+};
