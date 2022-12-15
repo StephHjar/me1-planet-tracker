@@ -56,10 +56,10 @@ class AddPlanet(View):
 
         if add_planet_form.is_valid():
             add_planet_form.instance.user = self.request.user
-            name = add_planet_form.cleaned_data.get("name")
+            name = add_planet_form.cleaned_data.get('name')
             add_planet_form.save()
             messages.success(request,
-                             'You have added %(name)s to your planet list!')
+                             'You have added %s to your planet list!' % name)
         else:
             add_planet_form = AddPlanetForm()
 
@@ -71,14 +71,14 @@ class EditPlanet(SuccessMessageMixin, UpdateView):
     model = Planet
     form_class = EditPlanetForm
     success_url = reverse_lazy('planet_list')
-    success_message = "Planet updated successfully!"
+    success_message = 'Planet updated successfully!'
 
 
 class DeletePlanet(DeleteView):
     model = Planet
     success_url = reverse_lazy('planet_list')
 
-    success_message = "%(name)s was removed from your planet list!"
+    success_message = '%(name)s was removed from your planet list!'
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
