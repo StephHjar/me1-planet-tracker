@@ -2,6 +2,8 @@
  * @jest-environment jsdom
  */
 
+// I received some help from ChatGPT to write these tests - credit in README
+
 // Import the verifyPassword function to be tested
 const {
     verifyPassword
