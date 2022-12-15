@@ -17,9 +17,8 @@ function verifyPassword() {
     if (pw.length > 15) {
         window.alert("**Password length must not exceed 15 characters");
         return false;
-    } else {
-        alert("Password is correct");
     }
+    return true;
 }
 
 module.exports = {
