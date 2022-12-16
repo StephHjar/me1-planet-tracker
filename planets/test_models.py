@@ -3,9 +3,34 @@ from django.test import TestCase
 from .models import Planet
 
 
-class PlanetTestCase(TestCase):
-    def test_for_planet_name(self):
-        """The planet's name must be a valid
-        selection from the list of planets"""
-        planet = Planet.objects.create(name="Eden Prime")
-        self.assertEqual(planet.name, "Eden Prime")
+class TestPlanet(TestCase):
+    def test_fully_explored_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.fully_explored)
+
+    def test_turian_insignia_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.turian_insignia)
+
+    def test_asari_writing_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.asari_writing)
+
+    def test_prothean_disc_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.prothean_disc)
+
+    def test_mineral_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.mineral)
+
+    def test_medallion_defaults_to_false(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.medallion)
+
+    def test_notes_default_to_empty(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertFalse(planet.notes)
+
+    # created_on = models.DateTimeField(auto_now_add=True)
+    # updated_on = models.DateTimeField(auto_now=True)
