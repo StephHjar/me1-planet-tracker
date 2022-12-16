@@ -20,7 +20,7 @@ class EditPlanetForm(forms.ModelForm):
 
 class PlanetSearchForm(forms.Form):
     search_text = forms.CharField(
-        required=False,
+        required=True,
         label='Search by planet name ',
         widget=forms.TextInput(attrs={'placeholder': 'Search planets!'})
     )

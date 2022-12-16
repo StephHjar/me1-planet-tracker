@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import AddPlanetForm, EditPlanetForm
+from .forms import AddPlanetForm, EditPlanetForm, PlanetSearchForm
 
 
 class TestAddPlanetForm(TestCase):
@@ -94,3 +94,12 @@ class TestEditPlanetForm(TestCase):
                                             'mineral',
                                             'medallion',
                                             'notes'))
+
+
+class TestPlanetSearchForm(TestCase):
+
+    def test_form_validation(self):
+        form = PlanetSearchForm({'search_text': 'Earth'})
+        self.assertTrue(form.is_valid())
+        form = PlanetSearchForm({'search_text': ''})
+        self.assertFalse(form.is_valid())
