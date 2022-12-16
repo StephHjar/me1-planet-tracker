@@ -67,7 +67,6 @@ class AddPlanet(View):
 
 
 class EditPlanet(SuccessMessageMixin, UpdateView):
-
     model = Planet
     form_class = EditPlanetForm
     success_url = reverse_lazy('planet_list')
