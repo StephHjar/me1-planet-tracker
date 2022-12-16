@@ -1,5 +1,6 @@
+import unittest
 from django.test import TestCase
-from planets.models import Planet
+from .models import Planet
 
 
 class PlanetTestCase(TestCase):
@@ -8,6 +9,3 @@ class PlanetTestCase(TestCase):
         selection from the list of planets"""
         planet = Planet.objects.create(name="Eden Prime")
         self.assertEqual(planet.name, "Eden Prime")
-
-        if __name__ == '__main__':
-            unittest.main()
