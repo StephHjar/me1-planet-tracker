@@ -86,3 +86,4 @@ class DeletePlanet(DeleteView):
                                                           **kwargs)
         messages.success(self.request, self.success_message % obj.__dict__)
         return data_to_return
+
