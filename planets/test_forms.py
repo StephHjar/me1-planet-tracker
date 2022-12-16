@@ -98,8 +98,9 @@ class TestEditPlanetForm(TestCase):
 
 class TestPlanetSearchForm(TestCase):
 
-    def test_form_validation(self):
-        form = PlanetSearchForm({'search_text': 'Earth'})
-        self.assertTrue(form.is_valid())
+    def test_search_text_is_required(self):
         form = PlanetSearchForm({'search_text': ''})
         self.assertFalse(form.is_valid())
+        self.assertIn('search_text', form.errors.keys())
+        self.assertEqual(form.errors['search_text'][0],
+                         'This field is required.')
