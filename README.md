@@ -149,6 +149,13 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The code for the password validation was modified from [this page](https://www.javatpoint.com/confirm-password-validation-in-javascript) on JavaTPoint. 
 - To help write my Jest tests, I had [a conversation](static/readme/chatGPT-transcript-1.pdf) with the [ChatGPT AI](https://chat.openai.com/). The code had to be adjusted, but this helped me create a mock window alert, which allowed my tests to run.
 - Code Institute's "I Think Therefore I Blog" module helped me to write unit tests for my forms, models, and views. 
+- I used several resources to figure out how to structure the test for my PlanetList view, because it has a LoginRequiredMixin:
+  - [This thread on StackOverflow](https://stackoverflow.com/questions/40472094/django-secure-ssl-redirect-and-301-http-responses#42350975) showed me how to add ```follow=True``` and ```secure=True``` to the ```self.client.post``` request.
+  - [This thread on StackOverflow](https://stackoverflow.com/questions/62239228/writing-unit-test-for-my-class-based-views-which-also-require-loginrequiredmixin) provided additional clarifiaction around how to test templates with the LoginRequiredMixin, and 302 vs 200 codes. 
+  - [This thread on StackOverflow](https://stackoverflow.com/questions/2619102/djangos-self-client-login-does-not-work-in-unit-tests) was helpful with importing and using Client to mock a logged in user.
+  - [This thread on StackOverflow](https://stackoverflow.com/questions/71132138/object-has-no-attribute-when-running-testcase) helped me actually implement a logged in user within the test.
+  - [This thread on Reddit](https://www.reddit.com/r/djangolearning/comments/dfcul2/django_testing_responsetemplates_returns/) led me to ```assertRedirects```.
+  - [This thread on StackOverflow](https://stackoverflow.com/questions/47020253/django-testing-how-to-assert-redirect) was helpful with actually implementing ```assertRedirects```.
 
 ### Media
 
