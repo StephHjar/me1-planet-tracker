@@ -148,6 +148,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - [This thread](https://stackoverflow.com/questions/3248682/how-to-get-url-of-current-page-including-parameters-in-a-template) on StackOverflow was helpful in displaying a different message to the user if they haven't added any planets to their tracker yet, vs. if their search comes back empty ('search' in the URL).
 - The code for the password validation was modified from [this page](https://www.javatpoint.com/confirm-password-validation-in-javascript) on JavaTPoint. 
 - To help write my Jest tests, I had [a conversation](static/readme/chatGPT-transcript-1.pdf) with the [ChatGPT AI](https://chat.openai.com/). The code had to be adjusted, but this helped me create a mock window alert, which allowed my tests to run.
+- Code Institute's "I Think Therefore I Blog" module helped me to write unit tests for my forms, models, and views. 
 
 ### Media
 
