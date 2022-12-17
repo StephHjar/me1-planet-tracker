@@ -3,6 +3,7 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
+
 <!-- Sub-header -->
 <div class="container-fluid planet-list">
     <div class="row">
@@ -17,9 +18,9 @@
             </div>
         </div>
         <div class="row justify-content-center g-0 mb-4">
-            <div class="col-6 bg-dark bg-opacity-75 text-center p-1">
+            <div class="col-md-3 col-6 bg-dark bg-opacity-75 text-center p-1">
                 <form class="form-inline" method="GET">
-                    {{ form }}
+                    {{ form | crispy }}
                     <p><button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Search</button>
                         <a class="btn btn-light text-uppercase mb-0 mt-1" href="{% url 'planet_list' %}">Back</a></p>
                 </form>
