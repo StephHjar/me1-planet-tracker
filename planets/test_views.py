@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from .models import Planet
+from .forms import AddPlanetForm
 from django.test import TestCase, Client
 
 
@@ -51,6 +52,18 @@ class TestViews(TestCase):
         self.client.login(username='testuser', password='testpass')
         response = self.client.post('/planet/add/', {'name': 'Xawin', 'user': 'testuser'})
         self.assertRedirects(response, '/planet/list/')
+
+    def test_add_planet_form_redirects_if_invalid(self):
+
+        User.objects.create_user(
+            username='testuser',
+            password='testpass'
+        )
+        self.client.login(username='testuser', password='testpass')
+        response = self.client.post('/planet/add/', {'name': '', 'user': 'testuser'})
+        add_planet_form = AddPlanetForm(data=response)
+        self.assertFalse(add_planet_form.is_valid())
+
 
     def test_can_edit_planet(self):
 

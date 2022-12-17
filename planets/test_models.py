@@ -32,5 +32,6 @@ class TestPlanet(TestCase):
         planet = Planet.objects.create(name='Virmire')
         self.assertFalse(planet.notes)
 
-    # created_on = models.DateTimeField(auto_now_add=True)
-    # updated_on = models.DateTimeField(auto_now=True)
+    def test_planet_string_method_returns_name(self):
+        planet = Planet.objects.create(name='Virmire')
+        self.assertEqual(str(planet), 'Virmire')
