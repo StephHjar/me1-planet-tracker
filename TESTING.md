@@ -21,8 +21,13 @@ I also wrote automated tests using Jest for my JavaScript password validator, an
 These tests can be found in my [js folder](https://github.com/StephHjar/me1-planet-tracker/tree/main/static/js/tests).
 
 ### Validator Testing - HTML
-When I first ran my HTML code through the validator, an error was found on the home page: my ```<footer>``` tag was outside my ```<body>``` tag:
-![HTML validator error](static/readme/html-validator-error.png)
+When I first ran my HTML code through the validator, some errors were found:
+
+- One error on the home page: my ```<footer>``` tag was outside my ```<body>``` tag:
+![HTML validator error - home page](static/readme/html-validator-error.png)
+
+- Five errors on the signup page, because the form was being opened in one ```<div>``` and closed in another:
+![HTML validator error - signup page](static/readme/html-validator-error2.png)
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
