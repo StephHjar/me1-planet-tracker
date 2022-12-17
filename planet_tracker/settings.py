@@ -33,8 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEVELOPMENT")
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
-X_FRAME_OPTIONS = 'ALLOWALL'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['me1-planet-tracker.herokuapp.com', 'localhost']
 

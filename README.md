@@ -1,4 +1,7 @@
 # Welcome to the Mass Effect 1 Planet Tracker!
+
+![Responsive mockup of the ME1 Planet Tracker](static/readme/responsive-mockup.jpg)
+
 The purpose of this site is to help Mass Effect 1 (ME1) players track which planets they have visited or scanned, and log any discoveries they've made there. 
 
 As someone who just played ME1 for the first time, one of the pieces of functionality I missed was a way to keep track of systems and planets I'd visited. In Mass Effect 2, each system is labelled with a percentage, telling you how much of that system you've visited. All unvisited planets are also clearly labelled. Unfortunately, this does not exist in ME1, so I (along with many other players) resorted to using a pen and a notepad. This was very manual, and involved a lot of flipping pages and rereading lists to see if I'd been to a particular planet before - there are 39 systems in the game, and each one has 3-6+ planets, so it's hard to remember them all!
@@ -150,6 +153,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The background image is by Enric Cruz López on [Pexels](https://www.pexels.com/photo/universe-filled-with-stars-nebula-and-glowing-milky-way-6039245/).
 - The image of the Normandy on the home page is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/SSV_Normandy).
 - Icons on the planet dashboard are from [FontAwesome](https://fontawesome.com/).
+- The responsive mockup was created on [Am I Responsive?](https://ui.dev/amiresponsive).
 
 ## Other General Project Advice
 
