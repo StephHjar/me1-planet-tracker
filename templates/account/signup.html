@@ -14,8 +14,7 @@
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
       </p>
     </div>
-    <div
-      class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light text-center">
+    <div class="col-md-auto p-3 text-start bg-dark bg-opacity-75 border-end border-bottom border-3 border-light">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}"
         onsubmit="return verifyPassword()">
         {% csrf_token %}
