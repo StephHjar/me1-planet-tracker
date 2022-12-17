@@ -51,7 +51,21 @@ Here are the final runs through the validator with no errors:
 - [Delete planet form - PDF](static/readme/html-validator-delete-planet.pdf)
 - [Logout page- PDF](static/readme/html-validator-logout.pdf)
 
-- CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+### Validator Testing - CSS
+No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/):
+- [CSS validator results - PDF](static/readme/css-validator.pdf)
+
+### Validator Testing - JavaScript
+No errors were found when passing through the official [JSHint validator](https://jshint.com/):
+![JavaScript validator results](static/readme/js-validator.png)
+The unused variable is called directly from the form's HTML.
+
+### Lighthouse Testing
+I was receiving a console error due to my ```module.export``` at the bottom of my JavaScript file, which was necessary for Jest testing:
+![Console error](static/readme/console-error.png)
+```javascript
+var module = module || {};
+module.exports = funct;
+```
 
   ### Manual Testing

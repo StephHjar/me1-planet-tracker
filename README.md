@@ -145,6 +145,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
   - [This thread on StackOverflow](https://stackoverflow.com/questions/71132138/object-has-no-attribute-when-running-testcase) helped me actually implement a logged in user within the test.
   - [This thread on Reddit](https://www.reddit.com/r/djangolearning/comments/dfcul2/django_testing_responsetemplates_returns/) led me to ```assertRedirects```.
   - [This thread on StackOverflow](https://stackoverflow.com/questions/47020253/django-testing-how-to-assert-redirect) was helpful with actually implementing ```assertRedirects```.
+- [This thread on StackOverflow](https://stackoverflow.com/questions/66349868/jest-unit-testing-module-export-error-in-browser-console) helped me resolve a console error due to the ```module.exports``` in my JavaScript file.
 
 ### Media
 
