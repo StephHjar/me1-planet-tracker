@@ -12,6 +12,10 @@ The planet tracker allows players to sign up for an account, and create a person
 
 The site is fully responsive, so users can play the game on desktop or console, and have their phone or tablet next to them open to the Planet Tracker while they play. 
 
+For more information about Mass Effect, please check out the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/Mass_Effect_Wiki).
+
+See the deployed site here: [ME1 Planet Tracker](https://me1-planet-tracker.herokuapp.com/).
+
 ## User Experience
 
 ### User Stories
@@ -80,26 +84,57 @@ I have also created an Entity Relationship Diagram (ERD) showing the relationshi
 
 ### Features Left to Implement
 
-- Another feature idea
+- All "Must Have" features were completed for this project, and the Should Have and Nice To Have features remain on the [project board](https://github.com/users/StephHjar/projects/5) as features to be added.
 
 ## Testing 
 
 Please see the [Testing file](TESTING.md) for automated, manual, and validator testing.
 
-### Unfixed Bugs
-
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
-
 ## Deployment
+​
+### Local Deployment
+​
+*Gitpod* IDE was used to write the code for this project.
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
+To preview the project in the development environment, run the following command in the terminal:
+```python3 manage.py runterminal```. This will open port 8000. Click *Open Browser* when the popup window appears.
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://github.com/StephHjar/me1-planet-tracker.git`
 
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html 
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/StephHjar/me1-planet-tracker)
+​
+### Heroku Deployment
+​
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+​
+Deployment steps are as follows, after account setup:
+​
+- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Enter a name for your app. The app name must be unique, so you need to adjust the name until you find a name that hasn't been used.
+- From the dropdown, choose the region closest to you (EU or USA), and finally, select *Create App*.
+- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`
+
+The Procfile can be created with the following command: `echo web: node index.js > Procfile`
+
+For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
+​
+- At the top of the screen on Heroku, select *Deploy*.
+- Next to *Deployment method* select *GitHub*, then scroll down and click *Connect to GitHub* to confirm you want to connect.
+- In the *repo-name* field, search for the name of the GitHub repository to deploy, and click *Search*.
+- Click *Connect* to link the GitHub repository with Heroku. 
+- Scroll down to the *Manual deploy* section, and click *Deploy Branch*.
+- If you like, click *Enable Automatic Deploys* in the *Automatic deploys* section to have Heroku rebuild your app every time you push a new change to GitHub.
+
+The frontend terminal should now be connected and deployed to Heroku.
 
 
 ## Credits 
@@ -158,19 +193,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - I used [CloudConvert](https://cloudconvert.com/) to convert images to webp format.
 - I used [TinyPNG](https://tinypng.com/) to compress my images.
 
-## Other General Project Advice
+### Acknowledgements
 
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process! 
+- Thank you to my mentor, Narender Singh, for the guidance and advice on this one! 
+- And a special thank you to my partner Jonathan, for testing the site, reviewing my README, and being the best support I could ask for.

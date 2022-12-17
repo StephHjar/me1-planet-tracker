@@ -99,3 +99,7 @@ The site was tested manually by going through all CRUD screens and forms, and en
 The site was tested on the following devices: MacBook Air, MacBook Pro, iPhone, and iPad. The site was tested in Chrome and Safari.
 
 There was one major bug documented in my [Closed Issues on Github](https://github.com/StephHjar/me1-planet-tracker/issues?q=is%3Aissue+is%3Aclosed).
+
+### Unfixed Bugs
+
+None that I am aware of.
