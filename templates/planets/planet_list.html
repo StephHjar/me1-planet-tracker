@@ -26,10 +26,10 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center g-0">
             {% for planet in planet_list %}
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3">
+                <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3 m-2">
                     <div class="card-body">
                         <h3 class="card-title">{{ planet.name }}</h3>
                         <p class="card-text"><b>Fully Explored?</b> {% if planet.fully_explored %} <i
