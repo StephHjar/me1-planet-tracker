@@ -71,9 +71,10 @@
             </div>
             {% if forloop.counter|divisibleby:4 %}
         </div>
-        <!-- Displays a message if a search turns up no results -->
+
         <div class="row">
             {% endif %}
+            <!-- Displays a message if a search turns up no results -->
             {% empty %}
             {% if 'search' in request.get_full_path %}
             <div class="col text-center justify-content-center">
