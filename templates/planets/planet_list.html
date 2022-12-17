@@ -16,12 +16,12 @@
                 <a href="{% url 'add_planet' %}" class="btn btn-dark btn-lg text-uppercase">Add Planet</a>
             </div>
         </div>
-        <div class="row justify-content-center g-0">
+        <div class="row justify-content-center g-0 mb-4">
             <div class="col-6 bg-dark bg-opacity-75 text-center p-1">
                 <form class="form-inline" method="GET">
                     {{ form }}
-                    <button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Search</button>
-                    <a class="btn btn-light text-uppercase mb-0 mt-1" href="{% url 'planet_list' %}">Back</a>
+                    <p><button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Search</button>
+                        <a class="btn btn-light text-uppercase mb-0 mt-1" href="{% url 'planet_list' %}">Back</a></p>
                 </form>
             </div>
         </div>
