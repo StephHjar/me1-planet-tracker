@@ -21,6 +21,5 @@ function verifyPassword() {
     return true;
 }
 
-module.exports = {
-    verifyPassword
-};
+var module = module || {};
+module.exports = verifyPassword;

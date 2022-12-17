@@ -58,7 +58,6 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 ### Validator Testing - JavaScript
 No errors were found when passing through the official [JSHint validator](https://jshint.com/):
 ![JavaScript validator results](static/readme/js-validator.png)
-The unused variable is called directly from the form's HTML.
 
 ### Lighthouse Testing
 I was receiving a console error due to my ```module.export``` at the bottom of my JavaScript file, which was necessary for Jest testing:
