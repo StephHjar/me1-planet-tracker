@@ -67,5 +67,35 @@ I resolved this by adding the following code to the bottom of the file instead:
 var module = module || {};
 module.exports = funct;
 ```
+Desktop testing scores were very high:
+![Lighthouse testing scores for desktop](static/readme/lighthouse-desktop.png)
 
-  ### Manual Testing
+Mobile scores were significantly lower:
+![Lighthouse testing scores for mobile](static/readme/lighthouse-mobile.png)
+- [Here](static/readme/lighthouse-mobile-report.pdf) is the full PDF report.
+- The major issues are:
+  - Images don't have a fixed width or height: this is intentional to make the images & layout responsive.
+  - It suggests eliminating 'render-blocking resources', but these are the Bootstrap, Cloudinary, FontAwesome, and Google Fonts files I am loading in the head of the page.
+  - It suggests serving static assets with an efficient cache policy, but I am using Cloudinary to host my static files.
+
+
+### Manual Testing
+
+The site was tested manually by going through all CRUD screens and forms, and ensuring error validation and functionality. 
+
+| Test Case | Pass? | Screenshot |
+|-----------|-------|------------|
+|Sign-up form: username is required|Yes|![Error message if username is not filled in](static/readme/test-signup-username.png)|
+|Sign-up form: password must be longer than 8 characters|Yes|![Error message if username is less than 8 characters](static/readme/test-signup-password-8.jpg)|
+|Sign-up form: password must not be longer than 15 characters|Yes|![Error message if username is longer than 15 characters](static/readme/test-signup-password-15.png)|
+|Sign-up form: password is required|Yes|![Error message if passworld is not filled in](static/readme/test-signup-password.jpg)|
+|Login form: validation message shows when user logs in|Yes|![Validation message after login](static/readme/test-login-message.png)|
+|Add planet form: name is required|Yes|![Error messsage if name is not selected from the list](static/readme/test-add-planet-name.jpg)|
+|Add planet form: validation message when planet is added|Yes|![Validation message when planet is added](static/readme/test-add-planet-validation.jpg)|
+|Edit planet form: validation message when planet is edited|Yes|![Validation message when planet is edited](static/readme/test-edit-planet-validation.png)|
+|Delete planet form: validation message when planet is deleted|Yes|![Validation message when planet is deleted](static/readme/test-delete-planet-validation.jpg)|
+|Log out form: validation message when user logs out|Yes|![Validation message when user logs out](static/readme/test-sign-out-validation.jpg)|
+
+The site was tested on the following devices: MacBook Air, MacBook Pro, iPhone, and iPad. The site was tested in Chrome and Safari.
+
+There was one major bug documented in my [Closed Issues on Github](https://github.com/StephHjar/me1-planet-tracker/issues?q=is%3Aissue+is%3Aclosed).
