@@ -23,11 +23,14 @@ These tests can be found in my [js folder](https://github.com/StephHjar/me1-plan
 ### Validator Testing - HTML
 When I first ran my HTML code through the validator, some errors were found:
 
-- One error on the home page: my ```<footer>``` tag was outside my ```<body>``` tag:
+- 1 error on the home page: my ```<footer>``` tag was outside my ```<body>``` tag:
 ![HTML validator error - home page](static/readme/html-validator-error.png)
 
 - Five errors on the signup page, because the form was being opened in one ```<div>``` and closed in another:
 ![HTML validator error - signup page](static/readme/html-validator-error2.png)
+
+- 13 errors on the planet list page:
+[Link to PDF here](static/readme/html-validator-error3.pdf)
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
