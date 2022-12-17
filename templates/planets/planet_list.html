@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             {% for planet in planet_list %}
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="card mb-4 bg-dark bg-opacity-75 border-end border-bottom border-3 m-2">
@@ -71,7 +71,7 @@
             </div>
             {% if forloop.counter|divisibleby:4 %}
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             {% endif %}
             <!-- Displays a message if a search turns up no results -->
             {% empty %}
