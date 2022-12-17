@@ -61,8 +61,8 @@ a:hover {
 }
 
 .btn-light:hover {
-    border-color: #000;
     background-color: #000;
+    border: none;
     color: #fff;
 }
 
