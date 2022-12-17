@@ -155,6 +155,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The image of the Normandy on the home page is from the [Mass Effect Wiki](https://masseffect.fandom.com/wiki/SSV_Normandy).
 - Icons on the planet dashboard are from [FontAwesome](https://fontawesome.com/).
 - The responsive mockup was created on [Am I Responsive?](https://ui.dev/amiresponsive).
+- I used [CloudConvert](https://cloudconvert.com/) to convert images to webp format.
 
 ## Other General Project Advice
 
