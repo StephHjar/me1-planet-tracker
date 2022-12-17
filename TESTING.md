@@ -62,6 +62,7 @@ No errors were found when passing through the official [JSHint validator](https:
 ### Lighthouse Testing
 I was receiving a console error due to my ```module.export``` at the bottom of my JavaScript file, which was necessary for Jest testing:
 ![Console error](static/readme/console-error.png)
+I resolved this by adding the following code to the bottom of the file instead:
 ```javascript
 var module = module || {};
 module.exports = funct;
