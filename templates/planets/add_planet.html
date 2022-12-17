@@ -19,6 +19,7 @@
                 {{ add_planet_form | crispy }}
                 {% csrf_token %}
                 <button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Submit</button>
+                <a class="btn btn-light text-uppercase mb-0 mt-1" href="{% url 'planet_list' %}">Back</a></p>
             </form>
         </div>
     </div>
