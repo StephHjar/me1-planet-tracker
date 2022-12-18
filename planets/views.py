@@ -33,7 +33,7 @@ class PlanetFilter(BaseFilter):
 
 class PlanetList(LoginRequiredMixin, SearchListView):
     """
-    Planet list view, displays the user's planet dashboard 
+    Planet list view, displays the user's planet dashboard
     with 8 planets per paged, ordered from the most recently updated
     """
     model = Planet
@@ -104,4 +104,3 @@ class DeletePlanet(DeleteView):
                                                           **kwargs)
         messages.success(self.request, self.success_message % obj.__dict__)
         return data_to_return
-

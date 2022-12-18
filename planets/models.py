@@ -25,7 +25,8 @@ class Planet(models.Model):
 
     class Meta:
         """
-        Orders planets on the dashboard by when they were last updated (most recently updated first)
+        Orders planets on the dashboard by when they were
+        last updated (most recently updated first)
         """
         ordering = ['-updated_on']
 

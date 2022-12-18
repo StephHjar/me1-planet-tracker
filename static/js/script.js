@@ -1,7 +1,7 @@
 // Code adapted from a tutorial on JavaTPoint, credit in README
 function verifyPassword() {
     let pw = document.getElementById("id_password1").value;
-    //check empty password field  
+    //checks for empty password field  
     if (pw == "") {
         window.alert("**Fill in the password please!");
         return false;

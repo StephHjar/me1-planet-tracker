@@ -10,7 +10,6 @@ When I first ran my automated Python tests, there was one statement missing in v
 The final test coverage is at 100%:
 ![100% coverage in all tests](static/readme/coverage-final.png)
 
-
 These tests can be found in my [planets app](https://github.com/StephHjar/me1-planet-tracker/tree/main/planets)
 
 ### Automated Testing - JavaScript
@@ -58,6 +57,45 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 ### Validator Testing - JavaScript
 No errors were found when passing through the official [JSHint validator](https://jshint.com/):
 ![JavaScript validator results](static/readme/js-validator.png)
+
+### Validator Testing - Python
+No errors were found whne passing through the [CI Python Linter](https://pep8ci.herokuapp.com/#):
+
+#### admin.py
+![Validator results for admin.py](static/readme/python-validator-admin.png)
+
+#### apps.py
+![Validator results for apps.py](static/readme/python-validator-apps.png)
+
+#### forms.py
+![Validator results for forms.py](static/readme/python-validator-forms.png)
+
+#### models.py
+![Validator results for models.py](static/readme/python-validator-models.png)
+
+#### settings.py
+![Validator results for settings.py](static/readme/python-validator-settings.png)
+
+#### test_forms.py
+![Validator results for test_forms.py](static/readme/python-validator-test-forms.png)
+
+#### test_models.py
+![Validator results for test_models.py](static/readme/python-validator-test-models.png)
+
+#### test_views.py
+![Validator results for test_views.py](static/readme/python-validator-test-views.png)
+
+#### planet_tracker/urls.py
+![Validator results for planet_tracker/urls.py](static/readme/python-validator-urls-planet-tracker.png)
+
+#### planets/urls.py
+![Validator results for planets/urls.py](static/readme/python-validator-urls-planets.png)
+
+#### views.py
+![Validator results for views.py](static/readme/python-validator-views.png)
+
+#### wsgi.py
+![Validator results for wsgi.py](static/readme/python-validator-wsgi.png)
 
 ### Lighthouse Testing
 I was receiving a console error due to my ```module.export``` at the bottom of my JavaScript file, which was necessary for Jest testing:

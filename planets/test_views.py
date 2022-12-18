@@ -14,7 +14,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'index.html')
 
     def test_get_planet_list_view(self):
-        client = Client() 
+        client = Client()
         response = client.get('/planet/list/', follow=True, secure=True)
         self.assertRedirects(response, '/accounts/login/?next=/planet/list/')
 
@@ -51,7 +51,8 @@ class TestViews(TestCase):
             password='testpass'
         )
         self.client.login(username='testuser', password='testpass')
-        response = self.client.post('/planet/add/', {'name': 'Xawin', 'user': 'testuser'})
+        response = self.client.post('/planet/add/',
+                                    {'name': 'Xawin', 'user': 'testuser'})
         self.assertRedirects(response, '/planet/list/')
 
     def test_add_planet_form_redirects_if_invalid(self):
@@ -59,8 +60,10 @@ class TestViews(TestCase):
             username='testuser',
             password='testpass'
         )
-        self.client.login(username='testuser', password='testpass')
-        response = self.client.post('/planet/add/', {'name': '', 'user': 'testuser'})
+        self.client.login(username='testuser',
+                          password='testpass')
+        response = self.client.post('/planet/add/',
+                                    {'name': '', 'user': 'testuser'})
         add_planet_form = AddPlanetForm(data=response)
         self.assertFalse(add_planet_form.is_valid())
 
@@ -85,4 +88,3 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/planet/list/')
         existing_planets = Planet.objects.filter(id=planet.id)
         self.assertEqual(len(existing_planets), 0)
-
