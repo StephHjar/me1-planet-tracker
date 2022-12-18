@@ -4,6 +4,9 @@ from .models import Planet
 
 
 class TestPlanet(TestCase):
+    """
+    Unit testing for planet model
+    """
     def test_fully_explored_defaults_to_false(self):
         planet = Planet.objects.create(name='Virmire')
         self.assertFalse(planet.fully_explored)

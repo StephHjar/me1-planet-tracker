@@ -8,10 +8,12 @@
 <div class="container text-center">
   <div class="row justify-content-center">
     <div class="col-md-12">
+      <!-- Prompt to go to login page if account is already created -->
       <h2>{% trans "Sign Up" %}</h2>
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
       </p>
     </div>
+    <!-- Signup form -->
     <div class="col-md-auto p-3 text-start bg-dark bg-opacity-75 border-end border-bottom border-3 border-light">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}"
         onsubmit="return verifyPassword()">

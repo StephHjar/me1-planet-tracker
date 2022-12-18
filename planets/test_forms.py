@@ -3,7 +3,9 @@ from .forms import AddPlanetForm, EditPlanetForm, PlanetSearchForm
 
 
 class TestAddPlanetForm(TestCase):
-
+    """
+    Unit testing for add planet form
+    """
     def test_name_is_required(self):
         form = AddPlanetForm({'name': ''})
         self.assertFalse(form.is_valid())
@@ -56,7 +58,9 @@ class TestAddPlanetForm(TestCase):
 
 
 class TestEditPlanetForm(TestCase):
-
+    """
+    Unit testing for edit planet form
+    """
     def test_fully_explored_is_not_required(self):
         form = EditPlanetForm({'name': 'Noveria'})
         self.assertTrue(form.is_valid())
@@ -97,7 +101,9 @@ class TestEditPlanetForm(TestCase):
 
 
 class TestPlanetSearchForm(TestCase):
-
+    """
+    Unit testing for planet search form
+    """
     def test_search_text_is_required(self):
         form = PlanetSearchForm({'search_text': ''})
         self.assertFalse(form.is_valid())

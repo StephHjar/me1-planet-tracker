@@ -4,7 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Planet(models.Model):
-
+    """
+    Model for all planets
+    """
     file = open('planets/planets.txt', 'r')
     PLANET_CHOICES = [[x.rstrip('\n'), x.rstrip('\n')] for x in file]
 
@@ -22,7 +24,13 @@ class Planet(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created_on']
+        """
+        Orders planets on the dashboard by when they were last updated (most recently updated first)
+        """
+        ordering = ['-updated_on']
 
     def __str__(self):
+        """
+        Returns the planet's name as a string
+        """
         return self.name

@@ -5,7 +5,9 @@ from django.test import TestCase, Client
 
 
 class TestViews(TestCase):
-
+    """
+    Unit testing for all views
+    """
     def test_get_index_view(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
@@ -44,7 +46,6 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'planets/planet_confirm_delete.html')
 
     def test_can_add_planet(self):
-
         User.objects.create_user(
             username='testuser',
             password='testpass'
@@ -54,7 +55,6 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/planet/list/')
 
     def test_add_planet_form_redirects_if_invalid(self):
-
         User.objects.create_user(
             username='testuser',
             password='testpass'
@@ -64,9 +64,7 @@ class TestViews(TestCase):
         add_planet_form = AddPlanetForm(data=response)
         self.assertFalse(add_planet_form.is_valid())
 
-
     def test_can_edit_planet(self):
-
         User.objects.create_user(
             username='testuser',
             password='testpass'
@@ -77,7 +75,6 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/planet/list/')
 
     def test_can_delete_planet(self):
-
         User.objects.create_user(
             username='testuser',
             password='testpass'

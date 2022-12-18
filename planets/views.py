@@ -16,16 +16,26 @@ from .forms import AddPlanetForm, EditPlanetForm, PlanetSearchForm
 
 
 class IndexView(TemplateView):
+    """
+    View for the home / main landing page
+    """
     template_name = 'index.html'
 
 
 class PlanetFilter(BaseFilter):
+    """
+    Allows the user to search for planets by name from their dashboard
+    """
     search_fields = {
         'search_text': ['name', ],
     }
 
 
 class PlanetList(LoginRequiredMixin, SearchListView):
+    """
+    Planet list view, displays the user's planet dashboard 
+    with 8 planets per paged, ordered from the most recently updated
+    """
     model = Planet
     template_name = 'planets/planet_list.html'
     paginate_by = 8
@@ -39,7 +49,9 @@ class PlanetList(LoginRequiredMixin, SearchListView):
 
 
 class AddPlanet(View):
-
+    """
+    Add planet view, displays & handles the form to add a planet
+    """
     def get(self, request, *args, **kwargs):
 
         return render(
@@ -67,6 +79,9 @@ class AddPlanet(View):
 
 
 class EditPlanet(SuccessMessageMixin, UpdateView):
+    """
+    Displays and handles the form to edit a planet
+    """
     model = Planet
     form_class = EditPlanetForm
     success_url = reverse_lazy('planet_list')
@@ -74,6 +89,9 @@ class EditPlanet(SuccessMessageMixin, UpdateView):
 
 
 class DeletePlanet(DeleteView):
+    """
+    Displays and handles delete planet functionality
+    """
     model = Planet
     success_url = reverse_lazy('planet_list')
 
