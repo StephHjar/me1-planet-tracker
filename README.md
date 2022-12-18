@@ -199,7 +199,7 @@ For Heroku deployment, follow these steps to connect your GitHub repository to t
 Once the project is deployed, you will need to add the project's URL to your `ALLOWED_HOSTS` in `settings.py`, using the following code:
 - `ALLOWED_HOSTS = ['<project_url>']`
 In my case this looks like this:
-- `ALLOWED_HOSTS = ['me1-planet-tracker.herokuapp.com', 'localhost']`
+- `ALLOWED_HOSTS = ['me1-planet-tracker.herokuapp.com']`
 
 Push this update to GitHub, and the project should now be deployed and live on Heroku. 
 
