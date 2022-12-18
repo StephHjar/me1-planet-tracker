@@ -105,25 +105,87 @@ To make a local copy of this repository, you can clone the project by typing the
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/StephHjar/me1-planet-tracker)
+
+### Preparing File for Deployment
+
+If you have not already set up Postgres for use in the deployed application, complete the following steps:
+
+- In the terminal, type `pip3 install psycopg2-binary` and press enter.
+- Install gunicorn, which will act as the web server. Type `pip3 install gunicorn` in the terminal and press enter.
+- You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, which I did, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`:
+  - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called `requirements.txt`, with a list of all the packages that Heroku will need to install to run our app.
+- Create a Procfile in the root folder of your project, and add the following to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
+
 ​
+### ElephantSQL Deployment
+
+To host my database, I used ElephantSQL. 
+
+The instructions to create a new account can be[found here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up), provided by Code Institute. 
+
+Once you have created an account:
+- Log in to ElephantSQL to access your dashboard.
+- Click *Create New Instance*.
+- Give your plan a name (usually the name of the project, in this case *ME1 Planet Tracker*).
+- Select the Tiny Turtle (Free) plan.
+- Leave the Tags field blank.
+- Click *Select Region* and choose a data center near you.
+- Click *Review*, then, if everything looks correct, *Create Instance*.
+- Go back to your dashboard and click on the name of the project. 
+- Copy the database URL for your project, and use it in two places:
+  - In your `env.py` file, create a new key called `DATABASE_URL` and give it the value of the ElephantSQL database URL, as follows: ` os.environ.setdefault("DATABASE_URL", "my_copied_database_url")`.
+    - Before deploying the project, create a file called `env.py` (if it hasn't been created already), and complete the following steps:
+      - In `settings.py`: At the top of the file, add the following import:
+      ```python
+      import os
+
+      if os.path.isfile("env.py"):
+          import env
+      ```
+      - Replace the pasted-in database url with the following code:
+      ```python
+      os.environ.get("DATABASE_URL")
+      ```
+  - Paste the database URL into the config vars section of your project on Heroku - instructions are in the *Heroku Deployment* section below. 
+
+After the above steps are completed, install dj-database-url to your project, by typing the following command in the terminal and pressing enter:
+- `os.environ.setdefault("DATABASE_URL", "my_copied_database_url")`
+- Then update `requirements.txt` by typing `pip3 freeze --local > requirements.txt`.
+
 ### Heroku Deployment
 ​
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
-​
-Deployment steps are as follows, after account setup:
+
+To set up an account:
+
+- Go to [heroku.com](https://www.heroku.com) to register for a free account.
+- For my account, I set my *Role* as *Hobbyist* and *Primary development language* as Python.
+- Click *Create free account*.
+
+I used the [Code Institute Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) for this project, which hmeans the Heroku command line interface (CLI) came pre-installed. Please check the [Heroku documentation](https://devcenter.heroku.com/articles/heroku-cli) for the most up-to-date installation instructions. 
+
+To log in to the Heroku CLI:
+
+- In the terminal, type ```heroku login -i``` and press enter.. 
+- Enter your username and password in the terminal.
+- If you have Multi-Factor Authentication turned on:
+  - Click on Account Settings (via the avatar menu) on the Heroku Dashboard.
+  - Scroll down to the API Key section and click Reveal. Copy the key.
+  - Use the login command: heroku login -i
+  - Enter your Heroku username.
+  - Enter the API key you just copied when prompted for your password.
+
+Deployment steps are as follows, from the Heroku dashboard:
 ​
 - Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
 - Enter a name for your app. The app name must be unique, so you need to adjust the name until you find a name that hasn't been used.
 - From the dropdown, choose the region closest to you (EU or USA), and finally, select *Create App*.
 - From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-
-Heroku needs two additional files in order to deploy properly.
-- requirements.txt
-- Procfile
-
-You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`
-
-The Procfile can be created with the following command: `echo web: node index.js > Procfile`
+- Add another Config Var with the KEY set to `DATABASE_URL` and the value to the ElephantSQL database URL you copied above.
+- I added additional Config Vars for the folowing:
+  - `CLOUDINARY_URL` copied from my [Cloudinary](https://cloudinary.com/) dashboard, because I used Cloudinary to host my static files.
+  - `SECRET_KEY` which contains my secret key (also included in `env.py`).
+  - `HEROKU_POSTGRESQL_COBALT_URL` with my Heroku postgres database URL. 
 
 For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
 ​
@@ -134,8 +196,12 @@ For Heroku deployment, follow these steps to connect your GitHub repository to t
 - Scroll down to the *Manual deploy* section, and click *Deploy Branch*.
 - If you like, click *Enable Automatic Deploys* in the *Automatic deploys* section to have Heroku rebuild your app every time you push a new change to GitHub.
 
-The frontend terminal should now be connected and deployed to Heroku.
+Once the project is deployed, you will need to add the project's URL to your `ALLOWED_HOSTS` in `settings.py`, using the following code:
+- `ALLOWED_HOSTS = ['<project_url>']`
+In my case this looks like this:
+- `ALLOWED_HOSTS = ['me1-planet-tracker.herokuapp.com', 'localhost']`
 
+Push this update to GitHub, and the project should now be deployed and live on Heroku. 
 
 ## Credits 
 
@@ -181,6 +247,7 @@ The frontend terminal should now be connected and deployed to Heroku.
   - [This thread on Reddit](https://www.reddit.com/r/djangolearning/comments/dfcul2/django_testing_responsetemplates_returns/) led me to ```assertRedirects```.
   - [This thread on StackOverflow](https://stackoverflow.com/questions/47020253/django-testing-how-to-assert-redirect) was helpful with actually implementing ```assertRedirects```.
 - [This thread on StackOverflow](https://stackoverflow.com/questions/66349868/jest-unit-testing-module-export-error-in-browser-console) helped me resolve a console error due to the ```module.exports``` in my JavaScript file.
+- Some deployment instructions are from Code Institute's 'Deployment' section, in the 'Hello Django' module of the course..
 
 ### Media
 
