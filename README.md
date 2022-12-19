@@ -76,11 +76,61 @@ I have also created an Entity Relationship Diagram (ERD) showing the relationshi
 ### Existing Features
 
 - __Navigation Bar__
+  - The header and navigation bar appear consistently across all pages of the site. I chose the font because it looks clear and clean, while also being a bit futuristic with very crisp lines & edges. The nav bar is fully responsive across all screen sizes, as seen below: 
 
-- __The Landing Page Image__
+  ![Header and navigation bar on desktop](static/readme/features-header-nav.jpg)
+  ![Header and navigation bar on mobile](static/readme/features-header-nav-mobile.png)
+
+- __The Landing Page__
+  - The landing page features a landing image of the starship Normandy (the main spaceship featured in the game Mass Effect). I chose a dark starry background to represent the fact that much of the game involves space travel. There is a short paragraph explaining the purpose of the site, and a featured link depending on the user's status: logged in users will see a link to their planet dashboard, and users who are not logged in will see a link to sign up.
+
+  ![Landing page for logged out users](static/readme/features-landing-page.png)
+  ![Landing page for logged in users](static/readme/features-landing-page-loggedin.jpg)
 
 - __The Sign Up Page__
+  - The sign up page allows the user to sign up for an account. It also provides a link redirecting them to the login page if they have already registered for an account.
 
+  ![Sign up page](static/readme/features-signup.jpg)
+
+- __The Login Page__
+  - The login page allows the user to log into their account. It also offers a 'Remember Me' option, so that the user does not have to re-enter their login details the next time they return to the page. Similarly to the sign up page, there is a link redirecting the user to sign up for an account if they have not already registered.
+
+  ![Login page](static/readme/features-login.png)
+
+- __Planet Dashboard__
+  - The planet dashboard is the main function of the website. It allows users to view all the planets they have logged, what they found on each planet (indicated by a green tick for items discovered, and a red x for items that were not discovered on that planet), and free text notes. Each planet's card also logs when the planet was first discovered, and when it was last edited. The planets are displayed in order from most recently edited to oldest. The planet dashboard is paginated, so a new page is created for every 8 planets. This prevents the page from becoming too long or unwieldy to navigate.
+
+  ![Planet dashboard](static/readme/features-dashboard.png)
+
+- __Planet Search Bar__
+  - Another main feature of the planet dashboard is the planet search bar. This allows the user to search their existing list of planets, to see if they have already added a planet to the list. If the search returns no results, it will prompt the user to check their spelling, and let them know they have not explored any planets by that name. 
+
+  ![Planet search bar](static/readme/features-search-bar.png)
+
+- __Add Planet Form__
+  - This form allows users to add a new planet to their dashboard. The only mandatory field is the name field, and the user must select from a pre-populated list of all the planets that appear in the game Mass Effect. All other fields are optional, as the user should select which items they discovered on each planet, and they only need to make notes if they choose to. The form also includes a back button so the user can return to the previous page without adding a planet.
+
+  ![Add planet form](static/readme/features-add-planet.png)
+
+- __Edit Planet Form__
+  - This is similar to the add planet form: it allows users to edit planets that have already been added to their dashboard. The form comes pre-loaded with the selections the user made when they first added the planet to their dashboard, as well as any notes they added. The planet's name cannot be edited. The form also includes a back button so the user can return to the previous page without editing the planet.
+
+  ![Edit planet form](static/readme/features-edit-planet.png)
+
+- __Delete Planet Form__
+  - This page allows users to delete a planet from their dashboard. After they click *Delete* on the planet's card, they are brought to this page which reconfirms that they would like to delete the planet. The user must confirm again that they wish to delete the planet from their tracker. The form also includes a back button so the user can return to the previous page without deleting the planet.
+
+  ![Delete planet form](static/readme/features-delete-planet.png)
+
+- __Sign Out Page__
+  - This page confirms with the user that they would like to sign out, after pressing *Sign Out* on the nav bar. The page also includes a back button, so they can return to the previous page without signing out. 
+
+  ![Sign out page](static/readme/features-sign-out.jpg)
+
+- __Validation Messages__
+  - A validation message appears every time a user takes one of the following actions: signing in, signing out, adding a planet, editing a planet, and deleting a planet. The styling is the same for all messages, and provide feedback to the user that their action has been successful. Here is an example:
+
+  ![Validation message](static/readme/features-validation.jpg)
 
 ### Features Left to Implement
 
