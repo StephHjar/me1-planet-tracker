@@ -141,7 +141,7 @@ I have also created an Entity Relationship Diagram (ERD) showing the relationshi
 Please see the [Testing file](TESTING.md) for automated, manual, and validator testing.
 
 ## Deployment
-​
+
 ### Local Deployment
 ​
 *Gitpod* IDE was used to write the code for this project.
@@ -166,7 +166,6 @@ If you have not already set up Postgres for use in the deployed application, com
   - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called `requirements.txt`, with a list of all the packages that Heroku will need to install to run our app.
 - Create a Procfile in the root folder of your project, and add the following to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
 
-​
 ### ElephantSQL Deployment
 
 To host my database, I used ElephantSQL. 
